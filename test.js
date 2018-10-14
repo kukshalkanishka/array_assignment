@@ -118,6 +118,15 @@ assertEqual(countNumbersAbove(1,[1,2]),1);
 assertEqual(countNumbersAbove(2,[2,2]),0);
 assertEqual(countNumbersAbove(2,[1,2,3,4,5]),3);
 
+//-----------------(find first occurance test)-----------------------//
+
+const findFirstOccurance = lib.findFirstOccurance;
+assertEqual(findFirstOccurance(1,[1]),0);
+assertEqual(findFirstOccurance(2,[1,2]),1);
+assertEqual(findFirstOccurance(1,[1,2,1]),0);
+assertEqual(findFirstOccurance(2,[2,2,1,1]),0);
+assertEqual(findFirstOccurance(2,[]),(-1));
+
 
 
 

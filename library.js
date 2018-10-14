@@ -235,5 +235,17 @@ const countNumbersBelow = function(value, numbers) {
   return count;
 }
 
+//---------------------(find first occurance)----------------------------//
+
+const findFirstOccurance = function(element, elements) {
+  firstOccurance = elements.indexOf(element);
+  return firstOccurance;
+}
+
+exports.findFirstOccurance = findFirstOccurance;
+
+//---------------------(check order)
+
+
 
 
