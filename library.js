@@ -187,28 +187,53 @@ const countEvenNumbers = function(numbers) {
 
 exports.countEvenNumbers = countEvenNumbers;
 
-//--------------------(count if greater)------------------------//
+//--------------------( is value1 greater than value2)------------------------//
 
-const isGreater = function(value1, value2) {
+const evaluateIsGreater = function(value1, value2) {
   let isGreater = 0;
-  if(value1 > value2){
+  if(value1 > value2) {
     isGreater = 1;
   }
 
   return isGreater;
 }
 
-//-------------------(count numbers above a value)--------------//
+const evaluateIsLesser = function(value1, value2) {
+  let isLesser = 0;
+  if(value1 < value2) {
+    isLesser = 1;
+  }
 
-const countNumbersAbove = function(value, numbers) {
+  return isLesser;
+}
+
+//---------------------(count reduced values)-------------------//
+const countReducedValues = function(elementToFind, elements, reducingFunction) {
   let count = 0;
-  for (let number of numbers) {
-    let increamenter = isGreater(number,value);  
+  for (let element of elements) {
+    let increamenter = reducingFunction(element,elementToFind);  
     count = count + increamenter;
    }
   
   return count;
 }
 
+
+//-------------------(count numbers above a value)--------------//
+
+const countNumbersAbove = function(value, numbers) {
+  count = countReducedValues(value, numbers, evaluateIsGreater);
+  return count;
+}
+
 exports.countNumbersAbove = countNumbersAbove;
+
+//----------------------(count numbers below)--------------------//
+
+const countNumbersBelow = function(value, numbers) {
+  count = countReducedValues(value, numbers, evaluateIsLesser);
+  return count;
+}
+
+
 

@@ -112,11 +112,11 @@ assert(countEvenNumbers([1,2,3,4,5]),2);
 //-------------------(Test for countNumbers above a value)-------------//
 
 const countNumbersAbove = lib.countNumbersAbove;
-assert(countNumbersAbove(2,[]),0);
-assert(countNumbersAbove(2,[2]),0);
-assert(countNumbersAbove(1,[1,2]),1);
-assert(countNumbersAbove(2,[2,2]),0);
-assert(countNumbersAbove(2,[1,2,3,4,5]),3);
+assertEqual(countNumbersAbove(2,[]),0);
+assertEqual(countNumbersAbove(2,[2]),0);
+assertEqual(countNumbersAbove(1,[1,2]),1);
+assertEqual(countNumbersAbove(2,[2,2]),0);
+assertEqual(countNumbersAbove(2,[1,2,3,4,5]),3);
 
 
 
