@@ -54,6 +54,20 @@ const filterOddNumbers = function(numbers) {
 
 exports.filterOddNumbers = filterOddNumbers;
 
+
+//------------------------------(Filter even numbers)---------------------//
+
+const filterEvenNumbers = function(numbers) {
+  let evenChoice = 0;
+  let filteredNumbers = filterNumbers(numbers,evenChoice);
+
+  return filteredNumbers;
+}
+
+exports.filterEvenNumbers = filterEvenNumbers;
+
+
+
 //-----------------------------(Add numbers)-----------------------//
 
 const addNumbers = function(numbers) {
@@ -141,13 +155,60 @@ const mapLengths = function(elements) {
 
 exports.mapLengths = mapLengths;
 
-//------------------(count odd numbers)---------------//
+//------------------(count elements)---------------//
+
+const countElements = function(elements) {
+  let count = elements.length; 
+
+  return count;
+}
+
+exports.countElements= countElements;
+
+//-------------------(count odd numbers)--------------//
 
 const countOddNumbers = function(numbers) {
-  let oddNumbers = filterOddNumbers(numbers);
-  let count = oddNumbers.length; 
+  let oddNumber = filterOddNumbers(numbers);
+  let count = countElements(oddNumber);
 
   return count;
 }
 
 exports.countOddNumbers = countOddNumbers;
+
+//------------------(count even numbers)---------------//
+
+const countEvenNumbers = function(numbers) {
+  let evenNumbers = filterEvenNumbers(numbers);
+  let count =  countElements(evenNumbers);
+
+  return count;
+}
+
+exports.countEvenNumbers = countEvenNumbers;
+
+//--------------------(count if greater)------------------------//
+
+const isGreater = function(value1, value2) {
+  let isGreater = 0;
+  if(value1 > value2){
+    isGreater = 1;
+  }
+
+  return isGreater;
+}
+
+//-------------------(count numbers above a value)--------------//
+
+const countNumbersAbove = function(value, numbers) {
+  let count = 0;
+  for (let number of numbers) {
+    let increamenter = isGreater(number,value);  
+    count = count + increamenter;
+   }
+  
+  return count;
+}
+
+exports.countNumbersAbove = countNumbersAbove;
+

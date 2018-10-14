@@ -1,4 +1,4 @@
-const lib= require("../library/library.js");
+const lib= require("./library.js");
 const assertEqual = require("assert").equal;
 const assert = require("assert").deepEqual;
 
@@ -95,11 +95,31 @@ assert(mapLengths(["kanishka", "dheeru", "naman"]),[8,6,5]);
 
 //-----------------(Test for count odd numbers)--------------------//
 
-const countElement = lib.countElement;
-assert(countElement([1]),1);
-assert(countElement([1,2]),1);
-assert(countElement([1]),1);
-assert(countElement([1]),1);
-assert(countElement([1]),1);
-assert(countElement([1]),1);
+const countOddNumbers = lib.countOddNumbers;
+assert(countOddNumbers([1]),1);
+assert(countOddNumbers([1,2]),1);
+assert(countOddNumbers([3,3,3]),3);
+assert(countOddNumbers([1,2,3,4,5]),3);
+
+//-----------------(Test for count Even Numbers)--------------------//
+
+const countEvenNumbers = lib.countEvenNumbers;
+assert(countEvenNumbers([2]),1);
+assert(countEvenNumbers([1,2]),1);
+assert(countEvenNumbers([2,2]),2);
+assert(countEvenNumbers([1,2,3,4,5]),2);
+
+//-------------------(Test for countNumbers above a value)-------------//
+
+const countNumbersAbove = lib.countNumbersAbove;
+assert(countNumbersAbove(2,[]),0);
+assert(countNumbersAbove(2,[2]),0);
+assert(countNumbersAbove(1,[1,2]),1);
+assert(countNumbersAbove(2,[2,2]),0);
+assert(countNumbersAbove(2,[1,2,3,4,5]),3);
+
+
+
+
+
 
