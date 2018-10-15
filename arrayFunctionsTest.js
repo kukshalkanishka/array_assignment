@@ -1,4 +1,4 @@
-const lib= require("./library.js");
+const lib= require("./arrayFunctionslib.js");
 const assertEqual = require("assert").equal;
 const assert = require("assert").deepEqual;
 

@@ -244,34 +244,56 @@ const findFirstOccurance = function(element, elements) {
 
 exports.findFirstOccurance = findFirstOccurance;
 
+//---------------------------(is greater)------------------------------//
+
+/*const checkIsGreater = function(value1, value2) {
+  let isGreater = value1> value2;
+  return isGreater;
+}*/
+
 //-------------------------(is lesser)-------------------------------//
 
-const checklesser = function(value, numbers, valuePosition, length) {
+const checkIsLesser = function(value1, value2) {
+  let isLesser = value1 < value2;
+  return isLesser;
+}
+
+//-----------------------(compare two values)-------------------------//
+
+const compareTwoValues = function(value, numbers, valuePosition, length, comparisonType) {
   for(let numPosition = valuePosition +1; numPosition < length; numPosition++) {
-    let isLesser = value < numbers[numPosition];
-    if(!isLesser){
-      return isLesser;
+    let comparedResult = comparisonType(value, numbers[numPosition]);
+    if(!comparedResult){
+      return comparedResult;
     }
   }
   return true;
 }
 
-//---------------------(check order)---------------------------------//
+//---------------------(compare value with succeeding values)---------------------------------//
 
-const checkOrderAscending = function(numbers) {
+const comapreWithSucceeders = function(numbers, comparisonType) {
   let length = numbers.length;
   for(let position = 0; position < length; position++) {
     let value = numbers[position];
-    isLesser = checklesser(value, numbers, position, length);
-    if(!isLesser) {
+    let comparedResult = compareTwoValues(value, numbers, position, length, comparisonType);
+    if(!comparedResult) {
       return false;
     }
   }
   return true;
 }
 
-exports.checkOrderAscending = checkOrderAscending;
 
+//------------------(checkOrderAscending)--------------------------//
+
+const checkOrderAscending = function(numbers) {
+  isAscending = comapreWithSucceeders(numbers, checkIsLesser);
+
+  return isAscending;
+}
+
+exports.checkOrderAscending = checkOrderAscending;
 
 
 
