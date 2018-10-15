@@ -222,7 +222,7 @@ const countReducedValues = function(elementToFind, elements, reducingFunction) {
 //-------------------(count numbers above a value)--------------//
 
 const countNumbersAbove = function(value, numbers) {
-  count = countReducedValues(value, numbers, evaluateIsGreater);
+  let count = countReducedValues(value, numbers, evaluateIsGreater);
   return count;
 }
 
@@ -231,14 +231,14 @@ exports.countNumbersAbove = countNumbersAbove;
 //----------------------(count numbers below)--------------------//
 
 const countNumbersBelow = function(value, numbers) {
-  count = countReducedValues(value, numbers, evaluateIsLesser);
+  let count = countReducedValues(value, numbers, evaluateIsLesser);
   return count;
 }
 
 //---------------------(find first occurance)----------------------------//
 
 const findFirstOccurance = function(element, elements) {
-  firstOccurance = elements.indexOf(element);
+  let firstOccurance = elements.indexOf(element);
   return firstOccurance;
 }
 
@@ -288,7 +288,7 @@ const comapreWithSucceeders = function(numbers, comparisonType) {
 //------------------(checkOrderAscending)--------------------------//
 
 const checkOrderAscending = function(numbers) {
-  isAscending = comapreWithSucceeders(numbers, checkIsLesser);
+  let isAscending = comapreWithSucceeders(numbers, checkIsLesser);
 
   return isAscending;
 }
