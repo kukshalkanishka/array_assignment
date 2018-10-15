@@ -127,6 +127,14 @@ assertEqual(findFirstOccurance(1,[1,2,1]),0);
 assertEqual(findFirstOccurance(2,[2,2,1,1]),0);
 assertEqual(findFirstOccurance(2,[]),(-1));
 
+//-----------------(check order)------------------------------------//
+
+const checkIsAscending = lib.checkIsAscending;
+assertEqual(checkIsAscending([1]),true);
+assertEqual(checkIsAscending([1,2]),true);
+assertEqual(checkIsAscending([1,2,1]),false);
+assertEqual(checkIsAscending([2,2,1,1]),false);
+
 
 
 

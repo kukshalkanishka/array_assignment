@@ -244,7 +244,34 @@ const findFirstOccurance = function(element, elements) {
 
 exports.findFirstOccurance = findFirstOccurance;
 
-//---------------------(check order)
+//-------------------------(is lesser)-------------------------------//
+
+const checklesser = function(value, numbers, valuePosition, length) {
+  for(let numPosition = valuePosition +1; numPosition < length; numPosition++) {
+    let isLesser = value < numbers[numPosition];
+    if(!isLesser){
+      return isLesser;
+    }
+  }
+  return true;
+}
+
+
+//---------------------(check order)---------------------------------//
+
+const checkIsAscending = function(numbers) {
+  let length = numbers.length;
+  for(let position = 0; position < length; position++) {
+    let value = numbers[position];
+    isLesser = checklesser(value, numbers, position, length);
+    if(!isLesser) {
+      return false;
+    }
+  }
+  return true;
+}
+
+exports.checkIsAscending = checkIsAscending;
 
 
 
