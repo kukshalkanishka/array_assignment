@@ -135,6 +135,19 @@ assertEqual(checkOrderAscending([1,2]),true);
 assertEqual(checkOrderAscending([1,2,1]),false);
 assertEqual(checkOrderAscending([2,2,1,1]),false);
 
+//-----------------(check order descending)------------------------------------//
+
+const checkOrderDescending = lib.checkOrderDescending;
+assertEqual(checkOrderDescending([1]),true);
+assertEqual(checkOrderDescending([2,1]),true);
+assertEqual(checkOrderDescending([1,2]),false);
+//assertEqual(checkOrderDescending([2,2,1,1]),true);
+
+//-------------------------
+const checkIsGreater = lib.checkIsGreater;
+assertEqual(checkIsGreater(2,1),true);
+assertEqual(checkIsGreater(1,2),false);
+
 
 
 

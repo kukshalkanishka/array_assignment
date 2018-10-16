@@ -246,10 +246,12 @@ exports.findFirstOccurance = findFirstOccurance;
 
 //---------------------------(is greater)------------------------------//
 
-/*const checkIsGreater = function(value1, value2) {
-  let isGreater = value1> value2;
+const checkIsGreater = function(value1, value2) {
+  let isGreater = value1 > value2;
   return isGreater;
-}*/
+}
+
+exports.checkIsGreater = checkIsGreater;
 
 //-------------------------(is lesser)-------------------------------//
 
@@ -296,4 +298,12 @@ const checkOrderAscending = function(numbers) {
 exports.checkOrderAscending = checkOrderAscending;
 
 
+//-------------------(checkOrderDescending)---------------------//
 
+const checkOrderDescending = function(numbers) {
+  let isDescending = comapreWithSucceeders(numbers, checkIsGreater);
+
+  return isDescending;
+}
+
+exports.checkOrderDescending = checkOrderDescending;
