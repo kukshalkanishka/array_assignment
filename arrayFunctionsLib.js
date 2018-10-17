@@ -246,39 +246,26 @@ exports.findFirstOccurance = findFirstOccurance;
 
 //---------------------------(is greater)------------------------------//
 
-const checkIsGreater = function(value1, value2) {
-  let isGreater = value1 > value2;
+const isGreater = function(value1, value2) {
+  let isGreater = value1 >= value2;
   return isGreater;
 }
 
-exports.checkIsGreater = checkIsGreater;
+exports.isGreater = isGreater;
 
 //-------------------------(is lesser)-------------------------------//
 
-const checkIsLesser = function(value1, value2) {
-  let isLesser = value1 < value2;
+const isLesser = function(value1, value2) {
+  let isLesser = value1 <= value2;
   return isLesser;
-}
-
-//-----------------------(compare two values)-------------------------//
-
-const compareTwoValues = function(value, numbers, valuePosition, length, comparisonType) {
-  for(let numPosition = valuePosition +1; numPosition < length; numPosition++) {
-    let comparedResult = comparisonType(value, numbers[numPosition]);
-    if(!comparedResult){
-      return comparedResult;
-    }
-  }
-  return true;
 }
 
 //---------------------(compare value with succeeding values)---------------------------------//
 
-const comapreWithSucceeders = function(numbers, comparisonType) {
+const compareWithSucceeder = function(numbers, comparisonType) {
   let length = numbers.length;
-  for(let position = 0; position < length; position++) {
-    let value = numbers[position];
-    let comparedResult = compareTwoValues(value, numbers, position, length, comparisonType);
+  for(let position = 0; position < (length -1); position++) {
+    let comparedResult = comparisonType(numbers[position],numbers[position +1]); 
     if(!comparedResult) {
       return false;
     }
@@ -286,24 +273,36 @@ const comapreWithSucceeders = function(numbers, comparisonType) {
   return true;
 }
 
-
 //------------------(checkOrderAscending)--------------------------//
 
-const checkOrderAscending = function(numbers) {
-  let isAscending = comapreWithSucceeders(numbers, checkIsLesser);
+const isOrderAscending = function(numbers) {
+  let isAscending = compareWithSucceeder(numbers, isLesser);
 
   return isAscending;
 }
 
-exports.checkOrderAscending = checkOrderAscending;
+exports.isOrderAscending = isOrderAscending;
 
 
-//-------------------(checkOrderDescending)---------------------//
+//-------------------(isOrderDescending)---------------------//
 
-const checkOrderDescending = function(numbers) {
-  let isDescending = comapreWithSucceeders(numbers, checkIsGreater);
+const isOrderDescending = function(numbers) {
+  let isDescending = compareWithSucceeder(numbers, isGreater);
 
   return isDescending;
 }
 
-exports.checkOrderDescending = checkOrderDescending;
+exports.isOrderDescending = isOrderDescending;
+
+//----------------(extract 
+
+
+
+
+
+
+
+
+
+
+

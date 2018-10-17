@@ -127,29 +127,33 @@ assertEqual(findFirstOccurance(1,[1,2,1]),0);
 assertEqual(findFirstOccurance(2,[2,2,1,1]),0);
 assertEqual(findFirstOccurance(2,[]),(-1));
 
-//-----------------(check order)------------------------------------//
+//-----------------(is order ascending)------------------------------------//
 
-const checkOrderAscending = lib.checkOrderAscending;
-assertEqual(checkOrderAscending([1]),true);
-assertEqual(checkOrderAscending([1,2]),true);
-assertEqual(checkOrderAscending([1,2,1]),false);
-assertEqual(checkOrderAscending([2,2,1,1]),false);
+const isOrderAscending = lib.isOrderAscending;
+assertEqual(isOrderAscending([1]),true);
+assertEqual(isOrderAscending([1,2]),true);
+assertEqual(isOrderAscending([1,2,1]),false);
+assertEqual(isOrderAscending([2,2,1,1]),false);
 
-//-----------------(check order descending)------------------------------------//
+//-----------------(is order descending)------------------------------------//
 
-const checkOrderDescending = lib.checkOrderDescending;
-assertEqual(checkOrderDescending([1]),true);
-assertEqual(checkOrderDescending([2,1]),true);
-assertEqual(checkOrderDescending([1,2]),false);
-//assertEqual(checkOrderDescending([2,2,1,1]),true);
+const isOrderDescending = lib.isOrderDescending;
+assertEqual(isOrderDescending([1]),true);
+assertEqual(isOrderDescending([2,1]),true);
+assertEqual(isOrderDescending([1,2]),false);
+assertEqual(isOrderDescending([2,2,1,1]),true);
 
-//-------------------------
-const checkIsGreater = lib.checkIsGreater;
-assertEqual(checkIsGreater(2,1),true);
-assertEqual(checkIsGreater(1,2),false);
+//------------------------(is greater)---------------------------//
 
+const isGreater = lib.isGreater;
+assertEqual(isGreater(2,1),true);
+assertEqual(isGreater(1,2),false);
 
+//-----------------------(extract digits)--------------------//
 
-
-
+//const extractDigits = lib.extractDigits;
+//assertEqual(extractDigits(2,[2]);
+//assertEqual(extractDigits(12,[1,2]);
+//assertEqual(extractDigits(
+//assertEqual(extractDigits(
 
