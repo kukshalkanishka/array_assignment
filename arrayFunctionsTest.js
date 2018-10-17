@@ -151,9 +151,18 @@ assertEqual(isGreater(1,2),false);
 
 //-----------------------(extract digits)--------------------//
 
-//const extractDigits = lib.extractDigits;
-//assertEqual(extractDigits(2,[2]);
-//assertEqual(extractDigits(12,[1,2]);
-//assertEqual(extractDigits(
-//assertEqual(extractDigits(
+const extractDigits = lib.extractDigits;
+assert(extractDigits(2),[2]);
+assert(extractDigits(12),[1,2]);
+assert(extractDigits(122),[1,2,2]);
+assert(extractDigits(12345),[1,2,3,4,5]);
+
+//-----------------------(count digits)-------------------//
+
+const countDigits = lib.countDigits;
+assertEqual(countDigits(2),1);
+assertEqual(countDigits(22),2);
+assertEqual(countDigits(222),3);
+
+
 

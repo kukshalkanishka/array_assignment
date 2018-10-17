@@ -294,15 +294,36 @@ const isOrderDescending = function(numbers) {
 
 exports.isOrderDescending = isOrderDescending;
 
-//----------------(extract 
+//----------------------(count digits)------------------------//
 
+const countDigits = function(number) {
+  let divisor = 10;
+  let counter = 0;
+  let remainder = 0;
+  while(number!=remainder){
+    remainder = number % divisor;
+    divisor*=10;
+    counter++;
+  }
+  return counter; 
+}
 
+exports.countDigits = countDigits;
 
+//---------------------(extract digits)----------------------//
 
+const extractDigits = function(number) {
+  let extractedDigits = [];
+  let divident = number;
 
+  while(divident > 0){
+    extractedDigits.push(divident % 10);
+    divident = Math.floor(divident / 10);
+  }
 
+  return extractedDigits.reverse();
+}
 
-
-
+exports.extractDigits = extractDigits;
 
 
