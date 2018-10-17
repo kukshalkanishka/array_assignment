@@ -164,5 +164,12 @@ assertEqual(countDigits(2),1);
 assertEqual(countDigits(22),2);
 assertEqual(countDigits(222),3);
 
+//-----------------------(count digits)-------------------//
+
+const fetchUniques = lib.fetchUniques;
+assert(fetchUniques([2]),[2]);
+assert(fetchUniques([1,2,3,4]),[1,2,3,4]);
+assert(fetchUniques([1,1,1]),[1]);
+assert(fetchUniques([1,2,2,4,5,6,6]),[1,2,4,5,6]);
 
 

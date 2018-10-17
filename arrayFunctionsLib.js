@@ -84,14 +84,13 @@ exports.addNumbers = addNumbers;
 //----------------------------(generates Fibonacci)------------------
 const generateFibonacci = function(totalNumOfTerms) {
   let series = [];
-  series[0]=0;
-  let firstNumber = 0;
+  let firstNumber = -1;
   let secondNumber = 1;
-  for (let termNumber = 1; termNumber < totalNumOfTerms; termNumber ++){
-    let thirdNumber = firstNumber + secondNumber;
-    secondNumber = firstNumber;
-    firstNumber = thirdNumber;
-    series.push(firstNumber);
+  for (let termNumber = 0; termNumber < totalNumOfTerms; termNumber ++){
+    let sum = firstNumber + secondNumber;
+    series.push(sum);
+    firstNumber = secondNumber;
+    secondNumber = sum;
   }
 
   return series;
@@ -326,4 +325,19 @@ const extractDigits = function(number) {
 
 exports.extractDigits = extractDigits;
 
+//---------------------(fetch uniques)----------------------//
 
+const fetchUniques= function(elements) {
+  let uniqueElements = [];
+  for(element of elements){
+    let isIncluded = uniqueElements.includes(element);
+
+    if( !isIncluded){
+      uniqueElements.push(element);
+    }
+  }
+
+  return uniqueElements;
+}
+
+exports.fetchUniques = fetchUniques;
