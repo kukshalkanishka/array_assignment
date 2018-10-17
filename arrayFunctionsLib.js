@@ -341,3 +341,32 @@ const fetchUniques= function(elements) {
 }
 
 exports.fetchUniques = fetchUniques;
+
+//---------------------(fetch uniques from two arrays)----------------------//
+
+const createUnion = function(list1, list2) {
+  let union = fetchUniques(list1.concat(list2));
+  return union;
+}
+
+exports.createUnion = createUnion;
+
+//---------------------(find intersection)----------------------//
+
+const findIntersections = function(list1, list2) {
+  let list1Uniques = fetchUniques(list1);
+  let list2Uniques = fetchUniques(list2);
+  let intersectionss = [];
+
+  for(element of list1) {
+    let isIncluded = list2Uniques.includes(element) 
+    if(isIncluded) {
+      intersectionss.push(element);
+    }
+  }
+
+  return intersectionss;
+}
+
+exports.findIntersections = findIntersections;
+

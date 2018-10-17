@@ -164,12 +164,30 @@ assertEqual(countDigits(2),1);
 assertEqual(countDigits(22),2);
 assertEqual(countDigits(222),3);
 
-//-----------------------(count digits)-------------------//
+//-----------------------(fetch uniques)-------------------//
 
 const fetchUniques = lib.fetchUniques;
 assert(fetchUniques([2]),[2]);
 assert(fetchUniques([1,2,3,4]),[1,2,3,4]);
 assert(fetchUniques([1,1,1]),[1]);
 assert(fetchUniques([1,2,2,4,5,6,6]),[1,2,4,5,6]);
+
+//-----------------------(fetch uniques from two arrays)----------------------//
+
+const createUnion = lib.createUnion;
+assert(createUnion([2],[1]),[2,1]);
+assert(createUnion([1,2],[3,4]),[1,2,3,4]);
+assert(createUnion([1,1],[1,1]),[1]);
+
+//-----------------------(find intersection)----------------------//
+
+const findIntersections = lib.findIntersections;
+assert(findIntersections([2],[2]),[2]);
+assert(findIntersections([1,2],[1,2]),[1,2]);
+//assert(findIntersections([1,1],[1]),[1]);
+//assert(findIntersections([1,1],[1,1]),[1]);
+//assert(findIntersections([1,1],[1,1]),[1]);
+
+
 
 
