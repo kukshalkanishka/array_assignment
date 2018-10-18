@@ -4,13 +4,13 @@ const assert = require("assert").deepEqual;
 
 //reverse numbers of an array
 
-const reverseNumbers = lib.reverseElements;
-assert(reverseNumbers([3]),[3]);
-assert(reverseNumbers([0]),[0]);
-assert(reverseNumbers([2,4]),[4,2]);
-assert(reverseNumbers([2,3.2]),[3.2,2]);
-assert(reverseNumbers([3,35,666]),[666,35,3]);
-assert(reverseNumbers([4,6,7,9,4,6]),[6,4,9,7,6,4]);
+const reverseElements = lib.reverseElements;
+assert(reverseElements([3]),[3]);
+assert(reverseElements([0]),[0]);
+assert(reverseElements([2,4]),[4,2]);
+assert(reverseElements([2,3.2]),[3.2,2]);
+assert(reverseElements([3,35,666]),[666,35,3]);
+assert(reverseElements([4,6,7,9,4,6]),[6,4,9,7,6,4]);
 
 //selects every second number of an array
 
@@ -184,9 +184,19 @@ assert(createUnion([1,1],[1,1]),[1]);
 const findIntersections = lib.findIntersections;
 assert(findIntersections([2],[2]),[2]);
 assert(findIntersections([1,2],[1,2]),[1,2]);
-//assert(findIntersections([1,1],[1]),[1]);
-//assert(findIntersections([1,1],[1,1]),[1]);
-//assert(findIntersections([1,1],[1,1]),[1]);
+assert(findIntersections([1,1],[1]),[1]);
+assert(findIntersections([1,1],[1,1]),[1]);
+assert(findIntersections([1,1,2,2],[1,1,3,4]),[1]);
+assert(findIntersections([1,1,2,2],[3,4]),[]);
+
+//-----------------------(find intersection)----------------------//
+
+const findDifferences = lib.findDifferences;
+assert(findDifferences([2],[1]),[2]);
+assert(findDifferences([1,2],[3,4]),[1,2]);
+//assert(findDifferences([1,1],[1,1]),[1]);
+assert(findDifferences([1,1,2,2],[1,1,3,4]),[2]);
+//assert(findDifferences([1,1,2,2],[3,4]),[]);
 
 
 

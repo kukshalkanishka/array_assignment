@@ -349,24 +349,47 @@ const createUnion = function(list1, list2) {
   return union;
 }
 
+//---------------------(find intersection)----------------------//
+//
 exports.createUnion = createUnion;
 
-//---------------------(find intersection)----------------------//
+const complement = function(input){
+  return !input;
+}
 
-const findIntersections = function(list1, list2) {
+const provide = function(input){
+  return input;
+}
+
+const find = function(list1, list2, selector) {
   let list1Uniques = fetchUniques(list1);
   let list2Uniques = fetchUniques(list2);
-  let intersectionss = [];
+  let searchedValues = [];
 
-  for(element of list1) {
-    let isIncluded = list2Uniques.includes(element) 
-    if(isIncluded) {
-      intersectionss.push(element);
+  for(element of list1Uniques) {
+    let isIncluded = list2Uniques.includes(element);
+    complemented = selector(isIncluded);
+    if(complemented) {
+      searchedValues.push(element);
     }
   }
 
-  return intersectionss;
+  return searchedValues;
+}
+
+exports.find = find;
+
+
+const findIntersections = function(list1, list2) {
+  let intersections = find(list1, list2, provide);
+  return intersections;
 }
 
 exports.findIntersections = findIntersections;
 
+const findDifferences = function(list1, list2) {
+  let differences = find(list1, list2, complement);
+  return differences;
+}
+
+exports.findDifferences = findDifferences;
