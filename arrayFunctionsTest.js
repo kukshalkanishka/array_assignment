@@ -194,10 +194,18 @@ assert(findIntersections([1,1,2,2],[3,4]),[]);
 const findDifferences = lib.findDifferences;
 assert(findDifferences([2],[1]),[2]);
 assert(findDifferences([1,2],[3,4]),[1,2]);
-//assert(findDifferences([1,1],[1,1]),[1]);
+assert(findDifferences([1,1],[1,1]),[]);
 assert(findDifferences([1,1,2,2],[1,1,3,4]),[2]);
-//assert(findDifferences([1,1,2,2],[3,4]),[]);
 
+
+//-----------------------(is subset)----------------------//
+
+const isSubset = lib.isSubset;
+assert(isSubset([1,2],[1,2]),true);
+assert(isSubset([1,2,3,4,5],[3,4]),true);
+assert(isSubset([],[]),true);
+//assert(isSubset([1,1,2,2],[1,1,3,4]),[2]);
+//
 
 
 

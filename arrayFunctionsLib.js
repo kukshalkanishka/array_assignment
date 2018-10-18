@@ -393,3 +393,17 @@ const findDifferences = function(list1, list2) {
 }
 
 exports.findDifferences = findDifferences;
+
+//----------------------------(is subset)------------------//
+
+const isSubset = function(list1, list2) {
+  for(value of list2){
+    isIncluded = list1.includes(value);
+    if(!isIncluded){
+      return isIncluded;
+    }
+  }
+  return isIncluded;
+}
+
+exports.isSubset = isSubset; 
