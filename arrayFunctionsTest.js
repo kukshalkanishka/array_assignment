@@ -206,5 +206,16 @@ assert(isSubset([1,2,3,4,5],[3,4]),true);
 assert(isSubset([],[]),true);
 assert(isSubset([1,1,2,2,5,7],[100]),false);
 
+//-----------------------(zip elements of two arrays)----------------------//
+
+const zip = lib.zip;
+assert(zip([1],[1]),[[1,1]]);
+assert(zip([1,2],[3,4]),[[1,3],[2,4]]);
+assert(zip([1,2,3,4],[6,6,6,6]),[[1,6],[2,6],[3,6],[4,6]]);
+assert(zip([1,2],[1,2,3]),[[1,1],[2,2]]);
+
+
+
+
 
 

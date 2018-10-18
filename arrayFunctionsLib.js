@@ -396,9 +396,9 @@ exports.findDifferences = findDifferences;
 
 //----------------------------(is subset)------------------//
 
-const isSubset = function(list1, list2) {
-  for(value of list2){
-    isIncluded = list1.includes(value);
+const isSubset = function(mainList, subset) {
+  for(value of subset){
+    isIncluded = mainList.includes(value);
     if(!isIncluded){
       return isIncluded;
     }
@@ -407,3 +407,17 @@ const isSubset = function(list1, list2) {
 }
 
 exports.isSubset = isSubset; 
+
+//----------------------------(zip)-----------------------------//
+
+const zip = function(list1,list2) {
+  let zippedElements = [];
+  let highestIndex = Math.min(list1.length, list2.length);
+  for(let index = 0; index< highestIndex; index++) {
+    zippedElements[index] = [list1[index], list2[index]];
+  }
+  
+  return zippedElements;
+}
+
+exports.zip = zip;
