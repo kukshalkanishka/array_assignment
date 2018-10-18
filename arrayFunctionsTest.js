@@ -204,8 +204,7 @@ const isSubset = lib.isSubset;
 assert(isSubset([1,2],[1,2]),true);
 assert(isSubset([1,2,3,4,5],[3,4]),true);
 assert(isSubset([],[]),true);
-//assert(isSubset([1,1,2,2],[1,1,3,4]),[2]);
-//
+assert(isSubset([1,1,2,2,5,7],[100]),false);
 
 
 
