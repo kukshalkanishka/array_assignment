@@ -220,8 +220,7 @@ assert(zip([],[]),[]);
 const rotateElementsBy = lib.rotateElementsBy;
 assert(rotateElementsBy(2, [1,2,3,4,5]),[3,4,5,1,2]);
 assert(rotateElementsBy(4,[1,2,3,4,5]),[5,1,2,3,4]);
-//assert(rotateElementsBy([1,2,3,4],[6,6,6,6]),[[1,6],[2,6],[3,6],[4,6]]);
-//assert(rotateElementsBy([1,2],[1,2,3]),[[1,1],[2,2]]);
+assert(rotateElementsBy(1,[]),[]);
 
 //-----------------------------(partition)------------------------------//
 
