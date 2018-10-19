@@ -1,18 +1,16 @@
 //----------------------(reverse elements)------------------// 
 
-const reverseElements = function(elements) {
-  let index = elements.length -1;
+const reverse = function(elements) {
   let reversedElements = [];
   for(element of elements) {
-    reversedElements[index] = element;
-    index--;
+    reversedElements.unshift(element);
   }
     
   return reversedElements;
 }
-exports.reverseElements = reverseElements;
+exports.reverse = reverse;
 
-//----------------------(selects Every Second Num)--------------------------
+//--`--------------------(selects Every Second Num)--------------------------//
 
 const selectAlternates = function(numbers) {
   let index = 0;
@@ -99,10 +97,10 @@ const generateFibonacci = function(totalNumOfTerms) {
 exports.generateFibonacci = generateFibonacci;
 
 //-------------------------------(provides number after comparision)------------------------------
-const reduce = function(elements, reduceFunction){
+const reduce = function(elements, reduce){
   let  previousValue = elements[0];
   for (let element of elements){
-    previousValue = reduceFunction(element, previousValue);
+    previousValue = reduce(element, previousValue);
   }
 
   return previousValue;
@@ -156,19 +154,19 @@ exports.mapLengths = mapLengths;
 
 //------------------(count elements)---------------//
 
-const countElements = function(elements) {
+const countlements = function(elements) {
   let count = elements.length; 
 
   return count;
 }
 
-exports.countElements= countElements;
+exports.countlements= countlements;
 
 //-------------------(count odd numbers)--------------//
 
 const countOddNumbers = function(numbers) {
   let oddNumber = filterOddNumbers(numbers);
-  let count = countElements(oddNumber);
+  let count = countlements(oddNumber);
 
   return count;
 }
@@ -177,14 +175,14 @@ exports.countOddNumbers = countOddNumbers;
 
 //------------------(count even numbers)---------------//
 
-const countEvenNumbers = function(numbers) {
+const countvenNumbers = function(numbers) {
   let evenNumbers = filterEvenNumbers(numbers);
-  let count =  countElements(evenNumbers);
+  let count =  countlements(evenNumbers);
 
   return count;
 }
 
-exports.countEvenNumbers = countEvenNumbers;
+exports.countvenNumbers = countvenNumbers;
 
 //--------------------( is value1 greater than value2)------------------------//
 
