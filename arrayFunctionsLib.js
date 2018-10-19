@@ -129,7 +129,7 @@ exports.findLowestNum = findLowestNum;
 
 //------------------------------(provide average of numbers)----------------//
 
-const provideAverage = function(numbers) {
+const calculateAverage = function(numbers) {
   let sum = 0;
   for(let number of numbers){
     sum = sum + number;
@@ -140,7 +140,7 @@ const provideAverage = function(numbers) {
   return average;
 }
 
-exports.provideAverage = provideAverage;
+exports.calculateAverage = calculateAverage;
 
 //------------------------------(Map length of element)---------------------//
 const mapLengths = function(elements) {

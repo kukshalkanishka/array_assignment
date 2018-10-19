@@ -79,11 +79,11 @@ assertEqual(findLowestNum([2,10,1,555]),1);
 
 //-----------------(test for find average of numbers)------------//
 
-const provideAverage = lib.provideAverage;
-assertEqual(provideAverage([2]),2);
-assertEqual(provideAverage([2,2]),2);
-assertEqual(provideAverage([2,3]),2.5);
-assertEqual(provideAverage([2,4,8]),4.7);
+const calculateAverage = lib.calculateAverage;
+assertEqual(calculateAverage([2]),2);
+assertEqual(calculateAverage([2,2]),2);
+assertEqual(calculateAverage([2,3]),2.5);
+assertEqual(calculateAverage([2,4,8]),4.7);
 
 //-----------------(test for map length of names)------------------//
 
