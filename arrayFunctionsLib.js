@@ -419,14 +419,11 @@ exports.zip = zip;
 
 //----------------------(rotate elements by "value")----------------------//
 
-const rotateElementsBy = function(value, elements) {
-  let rotatedElements = [];
-  let initialization = elements.indexOf(value) +1;
-  for(let i=initialization; i<elements.length; i++){
-    rotatedElements.push(elements[i]);
-  }
-  for(let i=0; i< initialization; i++) {
-    rotatedElements.push(elements[i]);
+const rotateElementsBy = function(rotateByIndex, elements) {
+  let rotatedElements = elements;
+  for(let i=0; i<rotateByIndex; i++) { 
+    let element = rotatedElements.shift();
+    rotatedElements.push(element);
   }
 
   return rotatedElements;
