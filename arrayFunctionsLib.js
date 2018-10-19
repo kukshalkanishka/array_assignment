@@ -423,16 +423,21 @@ const zip = function(list1,list2) {
 exports.zip = zip;
 
 //----------------------(rotate elements by "value")----------------------//
-//
-//const rotateElementsBy = function(value, elements) {
-//  let rotatedElements = [];
-//  for(index=0; index < elements.length; index++){
-//    let rotatedElements[index + ] = 
-// 
-//  }
-//
-//  return;
-//}
+
+const rotateElementsBy = function(value, elements) {
+  let rotatedElements = [];
+  let initialization = elements.indexOf(value) +1;
+  for(let i=initialization; i<elements.length; i++){
+    rotatedElements.push(elements[i]);
+  }
+  for(let i=0; i< initialization; i++) {
+    rotatedElements.push(elements[i]);
+  }
+
+  return rotatedElements;
+}
+
+exports.rotateElementsBy = rotateElementsBy
 
 //------------------------------(partition)------------------------------------//
 
