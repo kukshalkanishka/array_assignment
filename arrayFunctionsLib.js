@@ -361,14 +361,14 @@ const provide = function(input){
   return input;
 }
 
-const find = function(list1, list2, selector) {
+const filterItems= function(list1, list2, filterType) {
   let list1Uniques = fetchUniques(list1);
   let list2Uniques = fetchUniques(list2);
   let searchedValues = [];
 
   for(element of list1Uniques) {
     let isIncluded = list2Uniques.includes(element);
-    complemented = selector(isIncluded);
+    complemented = filterType(isIncluded);
     if(complemented) {
       searchedValues.push(element);
     }
@@ -377,18 +377,18 @@ const find = function(list1, list2, selector) {
   return searchedValues;
 }
 
-exports.find = find;
+exports.filterItems= filterItems;
 
 
 const findIntersections = function(list1, list2) {
-  let intersections = find(list1, list2, provide);
+  let intersections = filterItems(list1, list2, provide);
   return intersections;
 }
 
 exports.findIntersections = findIntersections;
 
 const findDifferences = function(list1, list2) {
-  let differences = find(list1, list2, complement);
+  let differences = filterItems(list1, list2, complement);
   return differences;
 }
 
