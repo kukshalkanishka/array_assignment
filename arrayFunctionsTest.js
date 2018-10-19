@@ -14,13 +14,13 @@ assert(reverseElements([4,6,7,9,4,6]),[6,4,9,7,6,4]);
 
 //selects every second number of an array
 
-const selectEverySecondNum = lib.selectEverySecondNum;
-assert(selectEverySecondNum([3]),[3]);
-assert(selectEverySecondNum([0]),[0]);
-assert(selectEverySecondNum([2,4]),[2]);
-assert(selectEverySecondNum([2,3.2]),[2]);
-assert(selectEverySecondNum([3,35,666]),[3,666]);
-assert(selectEverySecondNum([4,6,7,9,4,6]),[4,7,4]);
+const selectAlternates = lib.selectAlternates;
+assert(selectAlternates([3]),[3]);
+assert(selectAlternates([0]),[0]);
+assert(selectAlternates([2,4]),[2]);
+assert(selectAlternates([2,3.2]),[2]);
+assert(selectAlternates([3,35,666]),[3,666]);
+assert(selectAlternates([4,6,7,9,4,6]),[4,7,4]);
 
 //------------------------(filter odd numberes)--------------------------//
 

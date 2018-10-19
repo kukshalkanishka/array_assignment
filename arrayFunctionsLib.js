@@ -14,7 +14,7 @@ exports.reverseElements = reverseElements;
 
 //----------------------(selects Every Second Num)--------------------------
 
-const selectEverySecondNum = function(numbers) {
+const selectAlternates = function(numbers) {
   let index = 0;
   let selectedNumbers = [];
 
@@ -26,7 +26,7 @@ const selectEverySecondNum = function(numbers) {
   return selectedNumbers;
 }
 
-exports.selectEverySecondNum = selectEverySecondNum;
+exports.selectAlternates = selectAlternates;
   
 //-------------------------(filter)-----------------------------------//
 
@@ -349,46 +349,41 @@ const createUnion = function(list1, list2) {
   return union;
 }
 
-//---------------------(find intersection)----------------------//
-//
 exports.createUnion = createUnion;
 
-const complement = function(input){
-  return !input;
-}
+//---------------------(find intersection)----------------------//
 
-const provide = function(input){
-  return input;
-}
-
-const filterItems= function(list1, list2, filterType) {
+const findItems= function(list1, list2, filterType) {
   let list1Uniques = fetchUniques(list1);
   let list2Uniques = fetchUniques(list2);
-  let searchedValues = [];
+  let filteredValues = [];
 
   for(element of list1Uniques) {
     let isIncluded = list2Uniques.includes(element);
-    let complemented = filterType(isIncluded);
-    if(complemented) {
-      searchedValues.push(element);
+    if(filterType == "differences") {
+    isIncluded = !list2Uniques.includes(element);
+    }
+
+    if(isIncluded) {
+      filteredValues.push(element);
     }
   }
 
-  return searchedValues;
+  return filteredValues;
 }
 
-exports.filterItems= filterItems;
+exports.findItems= findItems;
 
 
 const findIntersections = function(list1, list2) {
-  let intersections = filterItems(list1, list2, provide);
+  let intersections = findItems(list1, list2, "intersections");
   return intersections;
 }
 
 exports.findIntersections = findIntersections;
 
 const findDifferences = function(list1, list2) {
-  let differences = filterItems(list1, list2, complement);
+  let differences = findItems(list1, list2, "differences");
   return differences;
 }
 
@@ -403,7 +398,7 @@ const isSubset = function(mainList, subset) {
       return isIncluded;
     }
   }
-  return isIncluded;
+  return true;
 }
 
 exports.isSubset = isSubset; 
