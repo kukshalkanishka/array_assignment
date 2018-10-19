@@ -213,9 +213,21 @@ assert(zip([1],[1]),[[1,1]]);
 assert(zip([1,2],[3,4]),[[1,3],[2,4]]);
 assert(zip([1,2,3,4],[6,6,6,6]),[[1,6],[2,6],[3,6],[4,6]]);
 assert(zip([1,2],[1,2,3]),[[1,1],[2,2]]);
+assert(zip([],[]),[]);
 
+//----------------------(rotate elements by "value")----------------------//
 
+//const rotateElementsBy = lib.rotateElementsBy;
+//assert(rotateElementsBy(2, [1,2,3,4,5]),[3,4,5,1,2]);
+//assert(rotateElementsBy(5,[1,2,3,4,5]),[5,1,2,3,4]);
+//assert(rotateElementsBy([1,2,3,4],[6,6,6,6]),[[1,6],[2,6],[3,6],[4,6]]);
+//assert(rotateElementsBy([1,2],[1,2,3]),[[1,1],[2,2]]);
 
+//-----------------------------(partition)------------------------------//
+
+const partition = lib.partition;
+assert(partition([1,2,3,4,5], 3),[[1,2,3],[4,5]]);
+assert(partition([1,1,1,1,1],),[[1,1,1,1,1],[]]);
 
 
 
