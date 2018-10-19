@@ -368,7 +368,7 @@ const filterItems= function(list1, list2, filterType) {
 
   for(element of list1Uniques) {
     let isIncluded = list2Uniques.includes(element);
-    complemented = filterType(isIncluded);
+    let complemented = filterType(isIncluded);
     if(complemented) {
       searchedValues.push(element);
     }
@@ -398,7 +398,7 @@ exports.findDifferences = findDifferences;
 
 const isSubset = function(mainList, subset) {
   for(value of subset){
-    isIncluded = mainList.includes(value);
+    let isIncluded = mainList.includes(value);
     if(!isIncluded){
       return isIncluded;
     }
