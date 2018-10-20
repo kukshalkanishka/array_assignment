@@ -10,9 +10,10 @@ const reverse= function(elements){
 //-----------------------(selects Every Second Num)--------------------------//
 
 const selectAlternates = function(numbers) {
-  return numbers.filter(function(number, index) {
+  const isIndexEven = function(number,index) {
     return index %2 ==0;
-  });
+  }
+  return numbers.filter(isIndexEven); 
 }
 
 //-------------------------(filter odd numbers)---------------------//
@@ -325,5 +326,4 @@ module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers
                   isOrderDescending, isGreater, isLesser, extractDigits, countDigits,
                   findIntersections, findDifferences, createUnion, fetchUniques,
                   isSubset, rotateElementsBy, zip, partition, reduce, generateFibonacci};
-
 
