@@ -37,7 +37,6 @@ const addNumbers = function(numbers) {
   });
 }
 
-module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers, addNumbers};
 
 //----------------------------(generates Fibonacci)------------------
 //const generateFibonacci = function(totalNumOfTerms) {
@@ -69,15 +68,17 @@ module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers
 //exports.reduce = reduce;
 //
 //
-////-------------------------------(find greatest number)------------------
-//
-//const findGreatestNum = function(numbers) {
-//  let greatestNum = reduce(numbers, Math.max);
-//  return greatestNum;
-//}
-//exports.findGreatestNum = findGreatestNum;
-//
-////--------------------------------(find lowest number)---------------------//
+//-------------------------------(find greatest number)------------------
+
+const findGreatestNum = function(numbers) {
+  return numbers.reduce(function(num1, num2) {
+    return num1 > num2 ? num1:num2;
+  });
+}
+
+module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers, addNumbers, findGreatestNum};
+
+//--------------------------------(find lowest number)---------------------//
 //
 //const findLowestNum = function(numbers) {
 //  let greatestNum = reduce(numbers, Math.min);

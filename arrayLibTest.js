@@ -58,16 +58,16 @@ assert.equal(addNumbers([4,6,7,9,4,6]),36);
 //assert.equal(reduce([1,2],Math.min),1);
 //assert.equal(reduce([1,2,4,5],Math.max),5);
 //
-////---------------(find greatest number)-------------------//
-//
-//const findGreatestNum = lib.findGreatestNum;
-//assert.equal(findGreatestNum([2]),2);
-//assert.equal(findGreatestNum([2,2]),2);
-//assert.equal(findGreatestNum([2,3]),3);
-//assert.equal(findGreatestNum([2,4,8]),8);
-//assert.equal(findGreatestNum([2,10,1,555]),555);
-//
-////---------------(find lowest number)-------------------//
+//---------------(find greatest number)-------------------//
+
+const findGreatestNum = lib.findGreatestNum;
+assert.equal(findGreatestNum([2]),2);
+assert.equal(findGreatestNum([2,2]),2);
+assert.equal(findGreatestNum([2,3]),3);
+assert.equal(findGreatestNum([2,4,8]),8);
+assert.equal(findGreatestNum([2,10,1,555]),555);
+
+//---------------(find lowest number)-------------------//
 //
 //const findLowestNum = lib.findLowestNum;
 //assert.equal(findLowestNum([2]),2);
