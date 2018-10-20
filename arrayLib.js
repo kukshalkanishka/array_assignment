@@ -76,31 +76,22 @@ const findGreatestNum = function(numbers) {
   });
 }
 
-module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers, addNumbers, findGreatestNum};
-
 //--------------------------------(find lowest number)---------------------//
-//
-//const findLowestNum = function(numbers) {
-//  let greatestNum = reduce(numbers, Math.min);
-//  return greatestNum;
-//}
-//exports.findLowestNum = findLowestNum;
-//
-////------------------------------(provide average of numbers)----------------//
-//
-//const calculateAverage = function(numbers) {
-//  let sum = 0;
-//  for(let number of numbers){
-//    sum = sum + number;
-//  }
-//
-//  let average = (sum/numbers.length).toFixed(1);
-//
-//  return average;
-//}
-//
-//exports.calculateAverage = calculateAverage;
-//
+const findLowestNum = function(numbers) {
+  return numbers.reduce(function(num1, num2) {
+    return num1 < num2 ? num1:num2;
+  });
+}
+
+//------------------------------(provide average of numbers)----------------//
+
+const calculateAverage = function(numbers) {
+  let average = (addNumbers(numbers)/numbers.length);
+  return average.toFixed(1);
+}
+
+module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers, addNumbers, findGreatestNum, findLowestNum, calculateAverage};
+
 ////------------------------------(Map length of element)---------------------//
 //const mapLengths = function(elements) {
 //  let mappedLengths = [];

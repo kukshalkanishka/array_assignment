@@ -68,22 +68,22 @@ assert.equal(findGreatestNum([2,4,8]),8);
 assert.equal(findGreatestNum([2,10,1,555]),555);
 
 //---------------(find lowest number)-------------------//
-//
-//const findLowestNum = lib.findLowestNum;
-//assert.equal(findLowestNum([2]),2);
-//assert.equal(findLowestNum([2,2]),2);
-//assert.equal(findLowestNum([2,3]),2);
-//assert.equal(findLowestNum([2,4,8]),2);
-//assert.equal(findLowestNum([2,10,1,555]),1);
-//
-////-----------------(test for find average of numbers)------------//
-//
-//const calculateAverage = lib.calculateAverage;
-//assert.equal(calculateAverage([2]),2);
-//assert.equal(calculateAverage([2,2]),2);
-//assert.equal(calculateAverage([2,3]),2.5);
-//assert.equal(calculateAverage([2,4,8]),4.7);
-//
+
+const findLowestNum = lib.findLowestNum;
+assert.equal(findLowestNum([2]),2);
+assert.equal(findLowestNum([2,2]),2);
+assert.equal(findLowestNum([2,3]),2);
+assert.equal(findLowestNum([2,4,8]),2);
+assert.equal(findLowestNum([2,10,1,555]),1);
+
+//-----------------(test for find average of numbers)------------//
+
+const calculateAverage = lib.calculateAverage;
+assert.equal(calculateAverage([2]),2);
+assert.equal(calculateAverage([2,2]),2);
+assert.equal(calculateAverage([2,3]),2.5);
+assert.equal(calculateAverage([2,4,8]),4.7);
+
 ////-----------------(test for map length of names)------------------//
 //
 //const mapLengths = lib.mapLengths;
