@@ -1,12 +1,10 @@
 //----------------------(reverse elements)------------------// 
 
-const insertElement = function(elements, element) {
-  elements.unshift(element);
-  return elements;
-}
-
 const reverse= function(elements){
-  return elements.reduce(insertElement, []);
+  return elements.reduce(function(elements, element){
+    elements.unshift(element);
+    return elements;
+  }, []);
 }
 
 //-----------------------(selects Every Second Num)--------------------------//
