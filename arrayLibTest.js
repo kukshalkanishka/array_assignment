@@ -235,3 +235,7 @@ assert.deepEqual(partition([1,2,3,4,5], 3),[[1,2,3],[4,5]]);
 assert.deepEqual(partition([1,1,1,1,1],1),[[1,1,1,1,1],[]]);
 assert.deepEqual(partition([],),[[],[]]);
 
+//----------------------------()--//
+
+const generateNumbersSeries = lib.generateNumbersSeries;
+assert.deepEqual(generateNumbersSeries(5),[0,1,2,3,4]);

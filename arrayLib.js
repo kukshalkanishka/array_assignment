@@ -7,13 +7,32 @@ const reverse= function(elements){
   }, []);
 }
 
-//-----------------------(selects Every Second Num)--------------------------//
+//-----------------------(generate numbers series)--------------------------//
+
+const generateNumbersSeries = function(numOfTerms) {
+  let numbers = [];
+  for(let number = 0; number<numOfTerms; number++) {
+    numbers.push(number);
+  }
+  return numbers;
+}
+
+//------------------------(is index even)-----------------------------//
+
+const isIndexEven = function(number) {
+  return number[1] % 2 == 0;
+}
+const pickZerothElement = function(elements) {
+  return elements[0];
+}
+
+//------------------------(select alternates)---------------------//
 
 const selectAlternates = function(numbers) {
-  const isIndexEven = function(number,index) {
-    return index %2 ==0;
-  }
-  return numbers.filter(isIndexEven); 
+  let indexes = generateNumbersSeries(numbers.length);
+  let zippedNumbers = zip(numbers,indexes);
+  let zippedAlternates = zippedNumbers.filter(isIndexEven);
+  return zippedAlternates.map(pickZerothElement);
 }
 
 //-------------------------(filter odd numbers)---------------------//
@@ -39,6 +58,7 @@ const addNumbers = function(numbers) {
 }
 
 //----------------------------(generates Fibonacci)------------------//
+
 const generateFibonacci = function(totalNumOfTerms) {
   let series = [];
   let firstNumber = -1;
@@ -54,6 +74,7 @@ const generateFibonacci = function(totalNumOfTerms) {
 }
 
 //-------------------------------(provides number after comparision)------------------------------
+
 const reduce = function(elements, reduce){
   let  previousValue = elements[0];
   for (let element of elements){
@@ -72,6 +93,7 @@ const findGreatestNum = function(numbers) {
 }
 
 //--------------------------------(find lowest number)---------------------//
+
 const findLowestNum = function(numbers) {
   return numbers.reduce(function(num1, num2) {
     return num1 < num2 ? num1:num2;
@@ -86,6 +108,7 @@ const calculateAverage = function(numbers) {
 }
 
 //------------------------------(Map length of element)---------------------//
+
 const mapLengths = function(elements) {
   return elements.map(function(element) {
     return element.length;
@@ -105,7 +128,6 @@ const countEvenNumbers = function(numbers) {
   let count = filterEvenNumbers(numbers).length;
   return count;
 }
-
 
 //-------------------(count numbers above a value)--------------//
 
@@ -131,7 +153,6 @@ const findFirstOccurance = function(element, elements) {
   let firstOccurance = elements.indexOf(element);
   return firstOccurance;
 }
-
 
 //---------------------------(is greater)------------------------------//
 
@@ -325,5 +346,6 @@ module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers
                   countNumbersBelow, findFirstOccurance, isOrderAscending, 
                   isOrderDescending, isGreater, isLesser, extractDigits, countDigits,
                   findIntersections, findDifferences, createUnion, fetchUniques,
-                  isSubset, rotateElementsBy, zip, partition, reduce, generateFibonacci};
+                  isSubset, rotateElementsBy, zip, partition, reduce, generateFibonacci,
+                  generateNumbersSeries};
 
