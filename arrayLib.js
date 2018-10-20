@@ -10,7 +10,7 @@ const reverse= function(elements){
 //-----------------------(selects Every Second Num)--------------------------//
 
 const selectAlternates = function(numbers) {
-  return numbers.filter(function(number, index){
+  return numbers.filter(function(number, index) {
     return index %2 ==0;
   });
 }
@@ -18,40 +18,28 @@ const selectAlternates = function(numbers) {
 //-------------------------(filter odd numbers)---------------------//
 
 const filterOddNumbers = function(numbers) {
-  return numbers.filter(function(number){
+  return numbers.filter(function(number) {
     return number % 2 != 0;
   });
 }
 
-module.exports = {reverse, selectAlternates, filterOddNumbers};
-
 //------------------------------(Filter even numbers)---------------------//
-//
-//const filterEvenNumbers = function(numbers) {
-//  let evenChoice = 0;
-//  let filteredNumbers = filterNumbers(numbers,evenChoice);
-//
-//  return filteredNumbers;
-//}
-//
-//exports.filterEvenNumbers = filterEvenNumbers;
-//
-//
-//
-////-----------------------------(Add numbers)-----------------------//
-//
-//const addNumbers = function(numbers) {
-//  let sum = 0;
-//  for(number of numbers) {
-//    sum = sum + +number;
-//  }
-//
-//  return sum;
-//}
-//
-//exports.addNumbers = addNumbers;
-//
-////----------------------------(generates Fibonacci)------------------
+const filterEvenNumbers = function(numbers) {
+  return numbers.filter(function(number) {
+    return number % 2 != 0;
+  });
+}
+
+//-----------------------------(Add numbers)-----------------------//
+const addNumbers = function(numbers) {
+  return numbers.reduce(function(num1, num2) {
+    return (num1 + num2);
+  });
+}
+
+module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers, addNumbers};
+
+//----------------------------(generates Fibonacci)------------------
 //const generateFibonacci = function(totalNumOfTerms) {
 //  let series = [];
 //  let firstNumber = -1;

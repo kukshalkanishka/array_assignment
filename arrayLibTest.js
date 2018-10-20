@@ -32,15 +32,15 @@ assert.deepEqual(filterOddNumbers([2,5,8,]),[5]);
 assert.deepEqual(filterOddNumbers([4,6,7,9,4,6]),[7,9]);
 
 //------------------------(add numbers)-------------------------//
-//const addNumbers = lib.addNumbers;
-//
-//assert.equal(addNumbers([3]),3);
-//assert.equal(addNumbers([0]),0);
-//assert.equal(addNumbers([2,4]),6);
-//assert.equal(addNumbers([2,3.2]),5.2);
-//assert.equal(addNumbers([3,35,666]),704);
-//assert.equal(addNumbers([4,6,7,9,4,6]),36);
-//
+const addNumbers = lib.addNumbers;
+
+assert.equal(addNumbers([3]),3);
+assert.equal(addNumbers([0]),0);
+assert.equal(addNumbers([2,4]),6);
+assert.equal(addNumbers([2,3.2]),5.2);
+assert.equal(addNumbers([3,35,666]),704);
+assert.equal(addNumbers([4,6,7,9,4,6]),36);
+
 ////generate fibonacci series
 //
 //const generateFibonacci = lib.generateFibonacci;
