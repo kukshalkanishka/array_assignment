@@ -117,15 +117,26 @@ assert.equal(countNumbersAbove([1,2],1),1);
 assert.equal(countNumbersAbove([2,2],2),0);
 assert.equal(countNumbersAbove([1,2,3,4,5],2),3);
 
-////-----------------(find first occurance test)-----------------------//
-//
-//const findFirstOccurance = lib.findFirstOccurance;
-//assert.equal(findFirstOccurance(1,[1]),0);
-//assert.equal(findFirstOccurance(2,[1,2]),1);
-//assert.equal(findFirstOccurance(1,[1,2,1]),0);
-//assert.equal(findFirstOccurance(2,[2,2,1,1]),0);
-//assert.equal(findFirstOccurance(2,[]),(-1));
-//
+//-------------------(Test for countNumbers above a value)-------------//
+
+const countNumbersBelow = lib.countNumbersBelow;
+assert.equal(countNumbersBelow([],2),0);
+assert.equal(countNumbersBelow([2],2),0);
+assert.equal(countNumbersBelow([1,2],1),0);
+assert.equal(countNumbersBelow([2,2],2),0);
+assert.equal(countNumbersBelow([1,2,3,4,5],2),1);
+
+
+
+//-----------------(find first occurance test)-----------------------//
+
+const findFirstOccurance = lib.findFirstOccurance;
+assert.equal(findFirstOccurance(1,[1]),0);
+assert.equal(findFirstOccurance(2,[1,2]),1);
+assert.equal(findFirstOccurance(1,[1,2,1]),0);
+assert.equal(findFirstOccurance(2,[2,2,1,1]),0);
+assert.equal(findFirstOccurance(2,[]),(-1));
+
 ////-----------------(is order ascending)------------------------------------//
 //
 //const isOrderAscending = lib.isOrderAscending;

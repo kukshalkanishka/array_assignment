@@ -121,27 +121,29 @@ const countNumbersAbove = function(numbers,value) {
   return numbersAboveValue.length;
 }
 
+//----------------------(count numbers below)--------------------//
+
+const countNumbersBelow = function(numbers,value) {
+  let numbersBelowValue = numbers.filter(function(number) {
+    return number < value;
+  });
+  return numbersBelowValue.length;
+}
+
+//---------------------(find first occurance)----------------------------//
+
+const findFirstOccurance = function(element, elements) {
+  let firstOccurance = elements.indexOf(element);
+  return firstOccurance;
+}
+
 module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers,
                   addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
-                  mapLengths, countOddNumbers, countEvenNumbers, countNumbersAbove};
+                  mapLengths, countOddNumbers, countEvenNumbers, countNumbersAbove,
+                  countNumbersBelow, findFirstOccurance};
 
-////----------------------(count numbers below)--------------------//
-//
-//const countNumbersBelow = function(value, numbers) {
-//  let count = countReducedValues(value, numbers, evaluateIsLesser);
-//  return count;
-//}
-//
-////---------------------(find first occurance)----------------------------//
-//
-//const findFirstOccurance = function(element, elements) {
-//  let firstOccurance = elements.indexOf(element);
-//  return firstOccurance;
-//}
-//
-//exports.findFirstOccurance = findFirstOccurance;
-//
-////---------------------------(is greater)------------------------------//
+
+//---------------------------(is greater)------------------------------//
 //
 //const isGreater = function(value1, value2) {
 //  let isGreater = value1 >= value2;
@@ -208,19 +210,19 @@ module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers
 //exports.countDigits = countDigits;
 //
 ////---------------------(extract digits)----------------------//
-//
+  //
 //const extractDigits = function(number) {
-//  let extractedDigits = [];
-//  let dividend = number;
+  //  let extractedDigits = [];
+  //  let dividend = number;
 //
 //  while(dividend > 0){
 //    extractedDigits.push(dividend % 10);
 //    dividend = Math.floor(dividend / 10);
-//  }
+  //  }
 //
-//  return extractedDigits.reverse();
-//}
-//
+  //  return extractedDigits.reverse();
+  //}
+  //
 //exports.extractDigits = extractDigits;
 //
 ////---------------------(fetch uniques)----------------------//
