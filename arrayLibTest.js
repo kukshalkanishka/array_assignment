@@ -137,77 +137,77 @@ assert.equal(findFirstOccurance(1,[1,2,1]),0);
 assert.equal(findFirstOccurance(2,[2,2,1,1]),0);
 assert.equal(findFirstOccurance(2,[]),(-1));
 
-////-----------------(is order ascending)------------------------------------//
-//
-//const isOrderAscending = lib.isOrderAscending;
-//assert.equal(isOrderAscending([1]),true);
-//assert.equal(isOrderAscending([1,2]),true);
-//assert.equal(isOrderAscending([1,2,1]),false);
-//assert.equal(isOrderAscending([2,2,1,1]),false);
-//
-////-----------------(is order descending)------------------------------------//
-//
-//const isOrderDescending = lib.isOrderDescending;
-//assert.equal(isOrderDescending([1]),true);
-//assert.equal(isOrderDescending([2,1]),true);
-//assert.equal(isOrderDescending([1,2]),false);
-//assert.equal(isOrderDescending([2,2,1,1]),true);
-//
-////------------------------(is greater)---------------------------//
-//
-//const isGreater = lib.isGreater;
-//assert.equal(isGreater(2,1),true);
-//assert.equal(isGreater(1,2),false);
-//
-////-----------------------(extract digits)--------------------//
-//
-//const extractDigits = lib.extractDigits;
-//assert.deepEqual(extractDigits(2),[2]);
-//assert.deepEqual(extractDigits(12),[1,2]);
-//assert.deepEqual(extractDigits(122),[1,2,2]);
-//assert.deepEqual(extractDigits(12345),[1,2,3,4,5]);
-//
-////-----------------------(count digits)-------------------//
-//
-//const countDigits = lib.countDigits;
-//assert.equal(countDigits(2),1);
-//assert.equal(countDigits(22),2);
-//assert.equal(countDigits(222),3);
-//
-////-----------------------(fetch uniques)-------------------//
-//
-//const fetchUniques = lib.fetchUniques;
-//assert.deepEqual(fetchUniques([2]),[2]);
-//assert.deepEqual(fetchUniques([1,2,3,4]),[1,2,3,4]);
-//assert.deepEqual(fetchUniques([1,1,1]),[1]);
-//assert.deepEqual(fetchUniques([1,2,2,4,5,6,6]),[1,2,4,5,6]);
-//
-////-----------------------(fetch uniques from two arrays)----------------------//
-//
-//const createUnion = lib.createUnion;
-//assert.deepEqual(createUnion([2],[1]),[2,1]);
-//assert.deepEqual(createUnion([1,2],[3,4]),[1,2,3,4]);
-//assert.deepEqual(createUnion([1,1],[1,1]),[1]);
-//
-////-----------------------(find intersection)----------------------//
-//
-//const findIntersections = lib.findIntersections;
-//assert.deepEqual(findIntersections([2],[2]),[2]);
-//assert.deepEqual(findIntersections([1,2],[1,2]),[1,2]);
-//assert.deepEqual(findIntersections([1,1],[1]),[1]);
-//assert.deepEqual(findIntersections([1,1],[1,1]),[1]);
-//assert.deepEqual(findIntersections([1,1,2,2],[1,1,3,4]),[1]);
-//assert.deepEqual(findIntersections([1,1,2,2],[3,4]),[]);
-//
-////-----------------------(find intersection)----------------------//
-//
-//const findDifferences = lib.findDifferences;
-//assert.deepEqual(findDifferences([2],[1]),[2]);
-//assert.deepEqual(findDifferences([1,2],[3,4]),[1,2]);
-//assert.deepEqual(findDifferences([1,1],[1,1]),[]);
-//assert.deepEqual(findDifferences([1,1,2,2],[1,1,3,4]),[2]);
-//
-//
+//-----------------(is order ascending)------------------------------------//
+
+const isOrderAscending = lib.isOrderAscending;
+assert.equal(isOrderAscending([1]),true);
+assert.equal(isOrderAscending([1,2]),true);
+assert.equal(isOrderAscending([1,2,1]),false);
+assert.equal(isOrderAscending([2,2,1,1]),false);
+
+//-----------------(is order descending)------------------------------------//
+
+const isOrderDescending = lib.isOrderDescending;
+assert.equal(isOrderDescending([1]),true);
+assert.equal(isOrderDescending([2,1]),true);
+assert.equal(isOrderDescending([1,2]),false);
+assert.equal(isOrderDescending([2,2,1,1]),true);
+
+//------------------------(is greater)---------------------------//
+
+const isGreater = lib.isGreater;
+assert.equal(isGreater(2,1),true);
+assert.equal(isGreater(1,2),false);
+
+//-----------------------(extract digits)--------------------//
+
+const extractDigits = lib.extractDigits;
+assert.deepEqual(extractDigits(2),[2]);
+assert.deepEqual(extractDigits(12),[1,2]);
+assert.deepEqual(extractDigits(122),[1,2,2]);
+assert.deepEqual(extractDigits(12345),[1,2,3,4,5]);
+
+//-----------------------(count digits)-------------------//
+
+const countDigits = lib.countDigits;
+assert.equal(countDigits(2),1);
+assert.equal(countDigits(22),2);
+assert.equal(countDigits(222),3);
+
+//-----------------------(fetch uniques)-------------------//
+
+const fetchUniques = lib.fetchUniques;
+assert.deepEqual(fetchUniques([2]),[2]);
+assert.deepEqual(fetchUniques([1,2,3,4]),[1,2,3,4]);
+assert.deepEqual(fetchUniques([1,1,1]),[1]);
+assert.deepEqual(fetchUniques([1,2,2,4,5,6,6]),[1,2,4,5,6]);
+
+//-----------------------(fetch uniques from two arrays)----------------------//
+
+const createUnion = lib.createUnion;
+assert.deepEqual(createUnion([2],[1]),[2,1]);
+assert.deepEqual(createUnion([1,2],[3,4]),[1,2,3,4]);
+assert.deepEqual(createUnion([1,1],[1,1]),[1]);
+
+//-----------------------(find intersection)----------------------//
+
+const findIntersections = lib.findIntersections;
+assert.deepEqual(findIntersections([2],[2]),[2]);
+assert.deepEqual(findIntersections([1,2],[1,2]),[1,2]);
+assert.deepEqual(findIntersections([1,1],[1]),[1]);
+assert.deepEqual(findIntersections([1,1],[1,1]),[1]);
+assert.deepEqual(findIntersections([1,1,2,2],[1,1,3,4]),[1]);
+assert.deepEqual(findIntersections([1,1,2,2],[3,4]),[]);
+
+//-----------------------(find intersection)----------------------//
+
+const findDifferences = lib.findDifferences;
+assert.deepEqual(findDifferences([2],[1]),[2]);
+assert.deepEqual(findDifferences([1,2],[3,4]),[1,2]);
+assert.deepEqual(findDifferences([1,1],[1,1]),[]);
+assert.deepEqual(findDifferences([1,1,2,2],[1,1,3,4]),[2]);
+
+
 ////-----------------------(is subset)----------------------//
 //
 //const isSubset = lib.isSubset;

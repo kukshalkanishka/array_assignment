@@ -137,176 +137,174 @@ const findFirstOccurance = function(element, elements) {
   return firstOccurance;
 }
 
+
+//---------------------------(is greater)------------------------------//
+
+const isGreater = function(value1, value2) {
+  let isGreater = value1 >= value2;
+  return isGreater;
+}
+
+exports.isGreater = isGreater;
+
+//-------------------------(is lesser)-------------------------------//
+
+const isLesser = function(value1, value2) {
+  let isLesser = value1 <= value2;
+  return isLesser;
+}
+
+//---------------------(compare value with succeeding values)---------------------------------//
+
+const compareWithSucceeder = function(numbers, comparisonType) {
+  let length = numbers.length;
+  for(let position = 0; position < (length -1); position++) {
+    let comparedResult = comparisonType(numbers[position],numbers[position +1]); 
+    if(!comparedResult) {
+      return false;
+    }
+  }
+  return true;
+}
+
+//------------------(checkOrderAscending)--------------------------//
+
+const isOrderAscending = function(numbers) {
+  let isAscending = compareWithSucceeder(numbers, isLesser);
+
+  return isAscending;
+}
+
+//-------------------(isOrderDescending)---------------------//
+
+const isOrderDescending = function(numbers) {
+  let isDescending = compareWithSucceeder(numbers, isGreater);
+
+  return isDescending;
+}
+
+//----------------------(count digits)------------------------//
+
+const countDigits = function(number) {
+  let divisor = 10;
+  let counter = 0;
+  let remainder = 0;
+  while(number!=remainder){
+    remainder = number % divisor;
+    divisor*=10;
+    counter++;
+  }
+  return counter; 
+}
+
+exports.countDigits = countDigits;
+
+//---------------------(extract digits)----------------------//
+
+const extractDigits = function(number) {
+  let extractedDigits = [];
+  let dividend = number;
+
+  while(dividend > 0){
+    extractedDigits.push(dividend % 10);
+    dividend = Math.floor(dividend / 10);
+  }
+
+  return extractedDigits.reverse();
+}
+
+exports.extractDigits = extractDigits;
+
+
+//---------------------(fetch uniques)----------------------//
+
+const fetchUniques= function(elements) {
+  let uniqueElements = [];
+  for(element of elements){
+    let isIncluded = uniqueElements.includes(element);
+
+    if( !isIncluded){
+      uniqueElements.push(element);
+    }
+  }
+
+  return uniqueElements;
+}
+
+exports.fetchUniques = fetchUniques;
+
+//---------------------(fetch uniques from two arrays)----------------------//
+
+const createUnion = function(list1, list2) {
+  let union = fetchUniques(list1.concat(list2));
+  return union;
+}
+
+exports.createUnion = createUnion;
+
+//---------------------(find intersection)----------------------//
+
+const findIntersections = function(list1, list2) {
+  let list1Uniques = fetchUniques(list1);
+  let list2Uniques = fetchUniques(list2);
+  let filteredValues = [];
+
+  for(element of list1Uniques) {
+    let isIncluded = list2Uniques.includes(element);
+
+    if(isIncluded) {
+      filteredValues.push(element);
+    }
+  }
+
+  return filteredValues;
+}
+
+//---------------------(find diffrences)--------------------//
+
+const findDifferences = function(list1, list2) {
+  let list1Uniques = fetchUniques(list1);
+  let list2Uniques = fetchUniques(list2);
+  let filteredValues = [];
+
+  for(element of list1Uniques) {
+    let isIncluded = !list2Uniques.includes(element);
+
+    if(isIncluded) {
+      filteredValues.push(element);
+    }
+  }
+
+  return filteredValues;
+}
+
 module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers,
                   addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
                   mapLengths, countOddNumbers, countEvenNumbers, countNumbersAbove,
-                  countNumbersBelow, findFirstOccurance};
+                  countNumbersBelow, findFirstOccurance, isOrderAscending, 
+                  isOrderDescending, isGreater, isLesser, extractDigits, countDigits,
+                  findIntersections, findDifferences, createUnion, fetchUniques};
 
 
-//---------------------------(is greater)------------------------------//
-//
-//const isGreater = function(value1, value2) {
-//  let isGreater = value1 >= value2;
-//  return isGreater;
-//}
-//
-//exports.isGreater = isGreater;
-//
-////-------------------------(is lesser)-------------------------------//
-//
-//const isLesser = function(value1, value2) {
-//  let isLesser = value1 <= value2;
-//  return isLesser;
-//}
-//
-////---------------------(compare value with succeeding values)---------------------------------//
-//
-//const compareWithSucceeder = function(numbers, comparisonType) {
-//  let length = numbers.length;
-//  for(let position = 0; position < (length -1); position++) {
-//    let comparedResult = comparisonType(numbers[position],numbers[position +1]); 
-//    if(!comparedResult) {
-//      return false;
-//    }
-//  }
-//  return true;
-//}
-//
-////------------------(checkOrderAscending)--------------------------//
-//
-//const isOrderAscending = function(numbers) {
-//  let isAscending = compareWithSucceeder(numbers, isLesser);
-//
-//  return isAscending;
-//}
-//
-//exports.isOrderAscending = isOrderAscending;
-//
-//
-////-------------------(isOrderDescending)---------------------//
-//
-//const isOrderDescending = function(numbers) {
-//  let isDescending = compareWithSucceeder(numbers, isGreater);
-//
-//  return isDescending;
-//}
-//
-//exports.isOrderDescending = isOrderDescending;
-//
-////----------------------(count digits)------------------------//
-//
-//const countDigits = function(number) {
-//  let divisor = 10;
-//  let counter = 0;
-//  let remainder = 0;
-//  while(number!=remainder){
-//    remainder = number % divisor;
-//    divisor*=10;
-//    counter++;
-//  }
-//  return counter; 
-//}
-//
-//exports.countDigits = countDigits;
-//
-////---------------------(extract digits)----------------------//
-  //
-//const extractDigits = function(number) {
-  //  let extractedDigits = [];
-  //  let dividend = number;
-//
-//  while(dividend > 0){
-//    extractedDigits.push(dividend % 10);
-//    dividend = Math.floor(dividend / 10);
-  //  }
-//
-  //  return extractedDigits.reverse();
-  //}
-  //
-//exports.extractDigits = extractDigits;
-//
-////---------------------(fetch uniques)----------------------//
-//
-//const fetchUniques= function(elements) {
-//  let uniqueElements = [];
-//  for(element of elements){
-//    let isIncluded = uniqueElements.includes(element);
-//
-//    if( !isIncluded){
-//      uniqueElements.push(element);
-//    }
-//  }
-//
-//  return uniqueElements;
-//}
-//
-//exports.fetchUniques = fetchUniques;
-//
-////---------------------(fetch uniques from two arrays)----------------------//
-//
-//const createUnion = function(list1, list2) {
-//  let union = fetchUniques(list1.concat(list2));
-//  return union;
-//}
-//
-//exports.createUnion = createUnion;
-//
-////---------------------(find intersection)----------------------//
-//
-//const findItems= function(list1, list2, filterType) {
-//  let list1Uniques = fetchUniques(list1);
-//  let list2Uniques = fetchUniques(list2);
-//  let filteredValues = [];
-//
-//  for(element of list1Uniques) {
-//    let isIncluded = list2Uniques.includes(element);
-//    if(filterType == "differences") {
-//    isIncluded = !list2Uniques.includes(element);
-//    }
-//
-//    if(isIncluded) {
-//      filteredValues.push(element);
-//    }
-//  }
-//
-//  return filteredValues;
-//}
-//
-//exports.findItems= findItems;
-//
-//
-//const findIntersections = function(list1, list2) {
-//  let intersections = findItems(list1, list2, "intersections");
-//  return intersections;
-//}
-//
-//exports.findIntersections = findIntersections;
-//
-//const findDifferences = function(list1, list2) {
-//  let differences = findItems(list1, list2, "differences");
-//  return differences;
-//}
-//
-//exports.findDifferences = findDifferences;
-//
+
 ////----------------------------(is subset)------------------//
-//
+  //
 //const isSubset = function(mainList, subset) {
-//  for(value of subset){
-//    let isIncluded = mainList.includes(value);
-//    if(!isIncluded){
+  //  for(value of subset){
+  //    let isIncluded = mainList.includes(value);
+  //    if(!isIncluded){
 //      return isIncluded;
-//    }
-//  }
+  //    }
+  //  }
 //  return true;
 //}
 //
-//exports.isSubset = isSubset; 
+  //exports.isSubset = isSubset; 
 //
 ////----------------------------(zip)-----------------------------//
 //
 //const zip = function(list1,list2) {
-//  let zippedElements = [];
+  //  let zippedElements = [];
 //  let highestIndex = Math.min(list1.length, list2.length);
 //  for(let index = 0; index< highestIndex; index++) {
 //    zippedElements[index] = [list1[index], list2[index]];
