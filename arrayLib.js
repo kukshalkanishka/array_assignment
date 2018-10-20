@@ -295,11 +295,11 @@ const findDifferences = function(list1, list2) {
 }
 
 //----------------------------(is subset)------------------//
-
 const isSubset = function(superSet, subset) {
-  return subset.every(function(item) {
+  const isIncluded = function(item){
     return superSet.includes(item);
-  });
+  }
+  return subset.every(isIncluded);
 }
 
 //----------------------------(zip)-----------------------------//
