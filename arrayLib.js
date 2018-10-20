@@ -90,85 +90,33 @@ const calculateAverage = function(numbers) {
   return average.toFixed(1);
 }
 
-module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers, addNumbers, findGreatestNum, findLowestNum, calculateAverage};
+//------------------------------(Map length of element)---------------------//
+const mapLengths = function(elements) {
+  return elements.map(function(element) {
+    return element.length;
+  });
+}
 
-////------------------------------(Map length of element)---------------------//
-//const mapLengths = function(elements) {
-//  let mappedLengths = [];
-//  for(let element of elements){
-//    mappedLengths.push(element.length);
-//  }
-//
-//  return mappedLengths;
-//}
-//
-//exports.mapLengths = mapLengths;
-//
-////------------------(count elements)---------------//
-//
-//const countlements = function(elements) {
-//  let count = elements.length; 
-//
-//  return count;
-//}
-//
-//exports.countlements= countlements;
-//
-////-------------------(count odd numbers)--------------//
-//
-//const countOddNumbers = function(numbers) {
-//  let oddNumber = filterOddNumbers(numbers);
-//  let count = countlements(oddNumber);
-//
-//  return count;
-//}
-//
-//exports.countOddNumbers = countOddNumbers;
-//
-////------------------(count even numbers)---------------//
-//
-//const countvenNumbers = function(numbers) {
-//  let evenNumbers = filterEvenNumbers(numbers);
-//  let count =  countlements(evenNumbers);
-//
-//  return count;
-//}
-//
-//exports.countvenNumbers = countvenNumbers;
-//
-////--------------------( is value1 greater than value2)------------------------//
-//
-//const evaluateIsGreater = function(value1, value2) {
-//  let isGreater = 0;
-//  if(value1 > value2) {
-//    isGreater = 1;
-//  }
-//
-//  return isGreater;
-//}
-//
-//const evaluateIsLesser = function(value1, value2) {
-//  let isLesser = 0;
-//  if(value1 < value2) {
-//    isLesser = 1;
-//  }
-//
-//  return isLesser;
-//}
-//
-////---------------------(count reduced values)-------------------//
-//const countReducedValues = function(elementToFind, elements, reducingFunction) {
-//  let count = 0;
-//  for (let element of elements) {
-//    let incrementer = reducingFunction(element,elementToFind);  
-//    count = count + incrementer;
-//   }
-//  
-//  return count;
-//}
-//
-//
-////-------------------(count numbers above a value)--------------//
+//-------------------(count odd numbers)--------------//
+
+const countOddNumbers = function(numbers) {
+  let count = filterOddNumbers(numbers).length;
+  return count;
+}
+
+//------------------(count even numbers)---------------//
+
+const countEvenNumbers = function(numbers) {
+  let count = filterEvenNumbers(numbers).length;
+  return count;
+}
+
+module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers,
+                  addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
+                  mapLengths, countOddNumbers, countEvenNumbers};
+
+
+//-------------------(count numbers above a value)--------------//
 //
 //const countNumbersAbove = function(numbers,value) {
 //  let count = countReducedValues(value, numbers, evaluateIsGreater);

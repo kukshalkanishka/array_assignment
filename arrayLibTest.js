@@ -84,16 +84,16 @@ assert.equal(calculateAverage([2,2]),2);
 assert.equal(calculateAverage([2,3]),2.5);
 assert.equal(calculateAverage([2,4,8]),4.7);
 
-////-----------------(test for map length of names)------------------//
-//
-//const mapLengths = lib.mapLengths;
-//assert.deepEqual(mapLengths(["k"]),[1]);
-//assert.deepEqual(mapLengths(["kanishka"]),[8]);
-//assert.deepEqual(mapLengths(["kanishka", "dheeru"]),[8,6]);
-//assert.deepEqual(mapLengths(["kanishka", "dheeru", "naman"]),[8,6,5]);
-//
-////-----------------(Test for count odd numbers)--------------------//
-//
+//-----------------(test for map length of names)------------------//
+
+const mapLengths = lib.mapLengths;
+assert.deepEqual(mapLengths(["k"]),[1]);
+assert.deepEqual(mapLengths(["kanishka"]),[8]);
+assert.deepEqual(mapLengths(["kanishka", "dheeru"]),[8,6]);
+assert.deepEqual(mapLengths(["kanishka", "dheeru", "naman"]),[8,6,5]);
+
+//-----------------(Test for count odd numbers)--------------------//
+
 //const countOddNumbers = lib.countOddNumbers;
 //assert.deepEqual(countOddNumbers([1]),1);
 //assert.deepEqual(countOddNumbers([1,2]),1);
