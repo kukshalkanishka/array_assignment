@@ -37,37 +37,31 @@ const addNumbers = function(numbers) {
   });
 }
 
+//----------------------------(generates Fibonacci)------------------//
+const generateFibonacci = function(totalNumOfTerms) {
+  let series = [];
+  let firstNumber = -1;
+  let secondNumber = 1;
+  for (let termNumber = 0; termNumber < totalNumOfTerms; termNumber ++){
+    let sum = firstNumber + secondNumber;
+    series.push(sum);
+    firstNumber = secondNumber;
+    secondNumber = sum;
+  }
 
-//----------------------------(generates Fibonacci)------------------
-//const generateFibonacci = function(totalNumOfTerms) {
-//  let series = [];
-//  let firstNumber = -1;
-//  let secondNumber = 1;
-//  for (let termNumber = 0; termNumber < totalNumOfTerms; termNumber ++){
-//    let sum = firstNumber + secondNumber;
-//    series.push(sum);
-//    firstNumber = secondNumber;
-//    secondNumber = sum;
-//  }
-//
-//  return series;
-//}
-//
-//exports.generateFibonacci = generateFibonacci;
-//
-////-------------------------------(provides number after comparision)------------------------------
-//const reduce = function(elements, reduce){
-//  let  previousValue = elements[0];
-//  for (let element of elements){
-//    previousValue = reduce(element, previousValue);
-//  }
-//
-//  return previousValue;
-//}
-//
-//exports.reduce = reduce;
-//
-//
+  return series;
+}
+
+//-------------------------------(provides number after comparision)------------------------------
+const reduce = function(elements, reduce){
+  let  previousValue = elements[0];
+  for (let element of elements){
+    previousValue = reduce(element, previousValue);
+  }
+
+  return previousValue;
+}
+
 //-------------------------------(find greatest number)------------------
 
 const findGreatestNum = function(numbers) {
@@ -278,67 +272,66 @@ const findDifferences = function(list1, list2) {
   return filteredValues;
 }
 
+
+
+//----------------------------(is subset)------------------//
+
+const isSubset = function(mainList, subset) {
+  for(value of subset){
+    let isIncluded = mainList.includes(value);
+    if(!isIncluded){
+  return isIncluded;
+    }
+  }
+  return true;
+}
+
+exports.isSubset = isSubset; 
+
+//----------------------------(zip)-----------------------------//
+
+const zip = function(list1,list2) {
+  let zippedElements = [];
+  let highestIndex = Math.min(list1.length, list2.length);
+  for(let index = 0; index< highestIndex; index++) {
+    zippedElements[index] = [list1[index], list2[index]];
+  }
+
+  return zippedElements;
+}
+
+exports.zip = zip;
+
+//----------------------(rotate elements by "value")----------------------//
+
+const rotateElementsBy = function(rotateByIndex, elements) {
+  let rotatedElements = elements;
+  for(let i=0; i<rotateByIndex; i++) { 
+    let element = rotatedElements.shift();
+    rotatedElements.push(element);
+  }
+
+  return rotatedElements;
+}
+
+exports.rotateElementsBy = rotateElementsBy
+
+//------------------------------(partition)------------------------------------//
+
+const partition = function(elements, partitioner) {
+  return elements.reduce(function(initializer,element) {
+    let isLesser = partitioner >= element ? 0:1;
+    initializer[isLesser].push(element);
+    return initializer;
+  },[[],[]]);
+}
+
 module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers,
                   addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
                   mapLengths, countOddNumbers, countEvenNumbers, countNumbersAbove,
                   countNumbersBelow, findFirstOccurance, isOrderAscending, 
                   isOrderDescending, isGreater, isLesser, extractDigits, countDigits,
-                  findIntersections, findDifferences, createUnion, fetchUniques};
+                  findIntersections, findDifferences, createUnion, fetchUniques,
+                  isSubset, rotateElementsBy, zip, partition, reduce, generateFibonacci};
 
 
-
-////----------------------------(is subset)------------------//
-  //
-//const isSubset = function(mainList, subset) {
-  //  for(value of subset){
-  //    let isIncluded = mainList.includes(value);
-  //    if(!isIncluded){
-//      return isIncluded;
-  //    }
-  //  }
-//  return true;
-//}
-//
-  //exports.isSubset = isSubset; 
-//
-////----------------------------(zip)-----------------------------//
-//
-//const zip = function(list1,list2) {
-  //  let zippedElements = [];
-//  let highestIndex = Math.min(list1.length, list2.length);
-//  for(let index = 0; index< highestIndex; index++) {
-//    zippedElements[index] = [list1[index], list2[index]];
-//  }
-//  
-//  return zippedElements;
-//}
-//
-//exports.zip = zip;
-//
-////----------------------(rotate elements by "value")----------------------//
-//
-//const rotateElementsBy = function(rotateByIndex, elements) {
-//  let rotatedElements = elements;
-//  for(let i=0; i<rotateByIndex; i++) { 
-//    let element = rotatedElements.shift();
-//    rotatedElements.push(element);
-//  }
-//
-//  return rotatedElements;
-//}
-//
-//exports.rotateElementsBy = rotateElementsBy
-//
-////------------------------------(partition)------------------------------------//
-//
-//const partition = function(elements, partitioner) {
-//  let partitioned = [[],[]]; 
-//  for(element of elements) {
-//    index = evaluateIsLesser(partitioner, element);
-//    partitioned[index].push(element);
-//  }
-//
-//  return partitioned;
-//}
-//
-//exports.partition = partition;

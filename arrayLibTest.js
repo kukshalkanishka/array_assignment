@@ -41,23 +41,23 @@ assert.equal(addNumbers([2,3.2]),5.2);
 assert.equal(addNumbers([3,35,666]),704);
 assert.equal(addNumbers([4,6,7,9,4,6]),36);
 
-////generate fibonacci series
-//
-//const generateFibonacci = lib.generateFibonacci;
-//assert.deepEqual(generateFibonacci(1),[0]);
-//assert.deepEqual(generateFibonacci(2),[0,1]);
-//assert.deepEqual(generateFibonacci(3),[0,1,1]);
-//assert.deepEqual(generateFibonacci(6),[0,1,1,2,3,5]);
-//assert.deepEqual(generateFibonacci(10),[0,1,1,2,3,5,8,13,21,34]);
-//
-////----------------(test provide number after comparison)---------
-//
-//const reduce = lib.reduce;
-//assert.equal(reduce([1],Math.min),1);
-//assert.equal(reduce([1],Math.max),1);
-//assert.equal(reduce([1,2],Math.min),1);
-//assert.equal(reduce([1,2,4,5],Math.max),5);
-//
+//generate fibonacci series
+
+const generateFibonacci = lib.generateFibonacci;
+assert.deepEqual(generateFibonacci(1),[0]);
+assert.deepEqual(generateFibonacci(2),[0,1]);
+assert.deepEqual(generateFibonacci(3),[0,1,1]);
+assert.deepEqual(generateFibonacci(6),[0,1,1,2,3,5]);
+assert.deepEqual(generateFibonacci(10),[0,1,1,2,3,5,8,13,21,34]);
+
+//----------------(test provide number after comparison)---------
+
+const reduce = lib.reduce;
+assert.equal(reduce([1],Math.min),1);
+assert.equal(reduce([1],Math.max),1);
+assert.equal(reduce([1,2],Math.min),1);
+assert.equal(reduce([1,2,4,5],Math.max),5);
+
 //---------------(find greatest number)-------------------//
 
 const findGreatestNum = lib.findGreatestNum;
@@ -208,36 +208,36 @@ assert.deepEqual(findDifferences([1,1],[1,1]),[]);
 assert.deepEqual(findDifferences([1,1,2,2],[1,1,3,4]),[2]);
 
 
-////-----------------------(is subset)----------------------//
-//
-//const isSubset = lib.isSubset;
-//assert.deepEqual(isSubset([1,2],[1,2]),true);
-//assert.deepEqual(isSubset([1,2,3,4,5],[3,4]),true);
-//assert.deepEqual(isSubset([],[]),true);
-//assert.deepEqual(isSubset([1,1,2,2,5,7],[100]),false);
-//
-////-----------------------(zip elements of two arrays)----------------------//
-//
-//const zip = lib.zip;
-//assert.deepEqual(zip([1],[1]),[[1,1]]);
-//assert.deepEqual(zip([1,2],[3,4]),[[1,3],[2,4]]);
-//assert.deepEqual(zip([1,2,3,4],[6,6,6,6]),[[1,6],[2,6],[3,6],[4,6]]);
-//assert.deepEqual(zip([1,2],[1,2,3]),[[1,1],[2,2]]);
-//assert.deepEqual(zip([],[]),[]);
-//
-////----------------------(rotate elements by "value")----------------------//
-//
-//const rotateElementsBy = lib.rotateElementsBy;
-//assert.deepEqual(rotateElementsBy(2, [1,2,3,4,5]), [3,4,5,1,2]);
-//assert.deepEqual(rotateElementsBy(4,[1,2,3,4,5]), [5,1,2,3,4]);
-//
-////-----------------------------(partition)------------------------------//
-//
-//const partition = lib.partition;
-//assert.deepEqual(partition([1,2,3,4,5], 3),[[1,2,3],[4,5]]);
-//assert.deepEqual(partition([1,1,1,1,1],1),[[1,1,1,1,1],[]]);
-//assert.deepEqual(partition([],),[[],[]]);
-//
-//
-//
-//
+//-----------------------(is subset)----------------------//
+
+const isSubset = lib.isSubset;
+assert.deepEqual(isSubset([1,2],[1,2]),true);
+assert.deepEqual(isSubset([1,2,3,4,5],[3,4]),true);
+assert.deepEqual(isSubset([],[]),true);
+assert.deepEqual(isSubset([1,1,2,2,5,7],[100]),false);
+
+//-----------------------(zip elements of two arrays)----------------------//
+
+const zip = lib.zip;
+assert.deepEqual(zip([1],[1]),[[1,1]]);
+assert.deepEqual(zip([1,2],[3,4]),[[1,3],[2,4]]);
+assert.deepEqual(zip([1,2,3,4],[6,6,6,6]),[[1,6],[2,6],[3,6],[4,6]]);
+assert.deepEqual(zip([1,2],[1,2,3]),[[1,1],[2,2]]);
+assert.deepEqual(zip([],[]),[]);
+
+//----------------------(rotate elements by "value")----------------------//
+
+const rotateElementsBy = lib.rotateElementsBy;
+assert.deepEqual(rotateElementsBy(2, [1,2,3,4,5]), [3,4,5,1,2]);
+assert.deepEqual(rotateElementsBy(4,[1,2,3,4,5]), [5,1,2,3,4]);
+
+//-----------------------------(partition)------------------------------//
+
+const partition = lib.partition;
+assert.deepEqual(partition([1,2,3,4,5], 3),[[1,2,3],[4,5]]);
+assert.deepEqual(partition([1,1,1,1,1],1),[[1,1,1,1,1],[]]);
+assert.deepEqual(partition([],),[[],[]]);
+
+
+
+
