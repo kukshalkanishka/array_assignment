@@ -94,29 +94,29 @@ assert.deepEqual(mapLengths(["kanishka", "dheeru", "naman"]),[8,6,5]);
 
 //-----------------(Test for count odd numbers)--------------------//
 
-//const countOddNumbers = lib.countOddNumbers;
-//assert.deepEqual(countOddNumbers([1]),1);
-//assert.deepEqual(countOddNumbers([1,2]),1);
-//assert.deepEqual(countOddNumbers([3,3,3]),3);
-//assert.deepEqual(countOddNumbers([1,2,3,4,5]),3);
-//
-////-----------------(Test for count Even Numbers)--------------------//
-//
-//const countvenNumbers = lib.countvenNumbers;
-//assert.deepEqual(countvenNumbers([2]),1);
-//assert.deepEqual(countvenNumbers([1,2]),1);
-//assert.deepEqual(countvenNumbers([2,2]),2);
-//assert.deepEqual(countvenNumbers([1,2,3,4,5]),2);
-//
-////-------------------(Test for countNumbers above a value)-------------//
-//
-//const countNumbersAbove = lib.countNumbersAbove;
-//assert.equal(countNumbersAbove([],2),0);
-//assert.equal(countNumbersAbove([2],2),0);
-//assert.equal(countNumbersAbove([1,2],1),1);
-//assert.equal(countNumbersAbove([2,2],2),0);
-//assert.equal(countNumbersAbove([1,2,3,4,5],2),3);
-//
+const countOddNumbers = lib.countOddNumbers;
+assert.deepEqual(countOddNumbers([1]),1);
+assert.deepEqual(countOddNumbers([1,2]),1);
+assert.deepEqual(countOddNumbers([3,3,3]),3);
+assert.deepEqual(countOddNumbers([1,2,3,4,5]),3);
+
+//-----------------(Test for count Even Numbers)--------------------//
+
+const countEvenNumbers = lib.countEvenNumbers;
+assert.deepEqual(countEvenNumbers([2]),1);
+assert.deepEqual(countEvenNumbers([1,2]),1);
+assert.deepEqual(countEvenNumbers([2,2]),2);
+assert.deepEqual(countEvenNumbers([1,2,3,4,5]),2);
+
+//-------------------(Test for countNumbers above a value)-------------//
+
+const countNumbersAbove = lib.countNumbersAbove;
+assert.equal(countNumbersAbove([],2),0);
+assert.equal(countNumbersAbove([2],2),0);
+assert.equal(countNumbersAbove([1,2],1),1);
+assert.equal(countNumbersAbove([2,2],2),0);
+assert.equal(countNumbersAbove([1,2,3,4,5],2),3);
+
 ////-----------------(find first occurance test)-----------------------//
 //
 //const findFirstOccurance = lib.findFirstOccurance;

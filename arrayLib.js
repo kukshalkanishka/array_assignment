@@ -26,7 +26,7 @@ const filterOddNumbers = function(numbers) {
 //------------------------------(Filter even numbers)---------------------//
 const filterEvenNumbers = function(numbers) {
   return numbers.filter(function(number) {
-    return number % 2 != 0;
+    return number % 2 == 0;
   });
 }
 
@@ -111,20 +111,20 @@ const countEvenNumbers = function(numbers) {
   return count;
 }
 
-module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers,
-                  addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
-                  mapLengths, countOddNumbers, countEvenNumbers};
-
 
 //-------------------(count numbers above a value)--------------//
-//
-//const countNumbersAbove = function(numbers,value) {
-//  let count = countReducedValues(value, numbers, evaluateIsGreater);
-//  return count;
-//}
-//
-//exports.countNumbersAbove = countNumbersAbove;
-//
+
+const countNumbersAbove = function(numbers,value) {
+  let numbersAboveValue = numbers.filter(function(number) {
+    return number > value;
+  });
+  return numbersAboveValue.length;
+}
+
+module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers,
+                  addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
+                  mapLengths, countOddNumbers, countEvenNumbers, countNumbersAbove};
+
 ////----------------------(count numbers below)--------------------//
 //
 //const countNumbersBelow = function(value, numbers) {
