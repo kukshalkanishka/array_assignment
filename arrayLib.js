@@ -272,21 +272,13 @@ const findDifferences = function(list1, list2) {
   return filteredValues;
 }
 
-
-
 //----------------------------(is subset)------------------//
 
-const isSubset = function(mainList, subset) {
-  for(value of subset){
-    let isIncluded = mainList.includes(value);
-    if(!isIncluded){
-  return isIncluded;
-    }
-  }
-  return true;
+const isSubset = function(superSet, subset) {
+  return subset.every(function(item) {
+    return superSet.includes(item);
+  });
 }
-
-exports.isSubset = isSubset; 
 
 //----------------------------(zip)-----------------------------//
 

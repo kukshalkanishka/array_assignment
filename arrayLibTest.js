@@ -1,7 +1,7 @@
 const lib= require("./arrayLib.js");
 const assert = require("assert");
 
-//reverse numbers of an array
+//------------------------(reverse numbers of an array)------------------------//
 
 const reverse = lib.reverse;
 assert.deepEqual(reverse([3]),[3]);
@@ -11,7 +11,7 @@ assert.deepEqual(reverse([2,3.2]),[3.2,2]);
 assert.deepEqual(reverse([3,35,666]),[666,35,3]);
 assert.deepEqual(reverse([4,6,7,9,4,6]),[6,4,9,7,6,4]);
 
-//selects every second number of an array
+//------------------------(selects every second number of an array)---------------//
 
 const selectAlternates = lib.selectAlternates;
 assert.deepEqual(selectAlternates([3]),[3]);
@@ -41,7 +41,7 @@ assert.equal(addNumbers([2,3.2]),5.2);
 assert.equal(addNumbers([3,35,666]),704);
 assert.equal(addNumbers([4,6,7,9,4,6]),36);
 
-//generate fibonacci series
+//-----------------------(generate fibonacci series)---------------------//
 
 const generateFibonacci = lib.generateFibonacci;
 assert.deepEqual(generateFibonacci(1),[0]);
@@ -50,7 +50,7 @@ assert.deepEqual(generateFibonacci(3),[0,1,1]);
 assert.deepEqual(generateFibonacci(6),[0,1,1,2,3,5]);
 assert.deepEqual(generateFibonacci(10),[0,1,1,2,3,5,8,13,21,34]);
 
-//----------------(test provide number after comparison)---------
+//----------------(test provide number after comparison)---------------//
 
 const reduce = lib.reduce;
 assert.equal(reduce([1],Math.min),1);
@@ -125,8 +125,6 @@ assert.equal(countNumbersBelow([2],2),0);
 assert.equal(countNumbersBelow([1,2],1),0);
 assert.equal(countNumbersBelow([2,2],2),0);
 assert.equal(countNumbersBelow([1,2,3,4,5],2),1);
-
-
 
 //-----------------(find first occurance test)-----------------------//
 
@@ -207,7 +205,6 @@ assert.deepEqual(findDifferences([1,2],[3,4]),[1,2]);
 assert.deepEqual(findDifferences([1,1],[1,1]),[]);
 assert.deepEqual(findDifferences([1,1,2,2],[1,1,3,4]),[2]);
 
-
 //-----------------------(is subset)----------------------//
 
 const isSubset = lib.isSubset;
@@ -237,7 +234,4 @@ const partition = lib.partition;
 assert.deepEqual(partition([1,2,3,4,5], 3),[[1,2,3],[4,5]]);
 assert.deepEqual(partition([1,1,1,1,1],1),[[1,1,1,1,1],[]]);
 assert.deepEqual(partition([],),[[],[]]);
-
-
-
 
