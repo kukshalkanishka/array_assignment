@@ -146,10 +146,10 @@ assert.equal(isOrderAscending([2,2,1,1]),false);
 //-----------------(is order descending)------------------------------------//
 
 const isOrderDescending = lib.isOrderDescending;
-//assert.equal(isOrderDescending([1]),true);
-//assert.equal(isOrderDescending([2,1]),true);
-//assert.equal(isOrderDescending([1,2]),false);
-//assert.equal(isOrderDescending([2,2,1,1]),true);
+assert.equal(isOrderDescending([1]),true);
+assert.equal(isOrderDescending([2,1]),true);
+assert.equal(isOrderDescending([1,2]),false);
+assert.equal(isOrderDescending([4,3,2,1]),true);
 
 ////------------------------(is greater)---------------------------//
 //

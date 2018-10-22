@@ -153,38 +153,9 @@ const findFirstOccurance = function(element, elements) {
   let firstOccurance = elements.indexOf(element);
   return firstOccurance;
 }
-//
-////---------------------------(is greater)------------------------------//
-//
-//const isGreater = function(value1, value2) {
-//  let isGreater = value1 >= value2;
-//  return isGreater;
-//}
-//
-//exports.isGreater = isGreater;
-//
-////-------------------------(is lesser)-------------------------------//
-//
-//const isLesser = function(value1, value2) {
-//  let isLesser = value1 <= value2;
-//  return isLesser;
-//}
-//
-////---------------------(compare value with succeeding values)---------------------------------//
-//
-//const compareWithSucceeder = function(numbers, comparisonType) {
-//  let length = numbers.length;
-//  for(let position = 0; position < (length -1); position++) {
-//    let comparedResult = comparisonType(numbers[position],numbers[position +1]); 
-//    if(!comparedResult) {
-//      return false;
-//    }
-//  }
-//  return true;
-//}
-//
-////------------------(checkOrderAscending)--------------------------//
-//
+
+//------------------(checkOrderAscending)--------------------------//
+
 const isOrderAscending = function(numbers) {
   let booleans = [];
   const compareNumbers = function(num1, num2) {
@@ -192,20 +163,26 @@ const isOrderAscending = function(numbers) {
     return num2;
   }
   numbers.reduce(compareNumbers, 0); 
-  let isAscending = booleans.reduce(function(state1, state2){
-    return (state1 && state2);
-  });
-
+  let isAscending = booleans.every(function(state){
+    return true === state;
+  })
   return isAscending;
 }
 
-////-------------------(isOrderDescending)---------------------//
+//-------------------(isOrderDescending)---------------------//
 
-//const isOrderDescending = function(numbers) {
-//  let isDescending = compareWithSucceeder(numbers, isGreater);
-//
-//  return isDescending;
-//}
+const isOrderDescending = function(numbers) {
+  let isDescending = true;
+  let length = numbers.length-1;
+  for(let position = 0; position < length; position++) {
+    let comparedResult = numbers[position] > numbers[position +1]; 
+    if(!comparedResult) {
+      isDescending = false;
+    }
+  }
+  return isDescending;
+}
+
 
 //----------------------(count digits)------------------------//
 
@@ -284,7 +261,7 @@ const findIntersections = function(list1, list2) {
   return filteredValues;
 }
 
-//---------------------(find diffrences)--------------------//
+//---------------------(find differences)--------------------//
 
 const findDifferences = function(list1, list2) {
   let list1Uniques = fetchUniques(list1);
@@ -303,6 +280,7 @@ const findDifferences = function(list1, list2) {
 }
 
 //----------------------------(is subset)------------------//
+
 const isSubset = function(superSet, subset) {
   const isIncluded = function(item){
     return superSet.includes(item);
@@ -351,7 +329,7 @@ module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers
                   addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
                   mapLengths, countOddNumbers, countEvenNumbers, countNumbersAbove,
                   countNumbersBelow, findFirstOccurance, isOrderAscending, 
-                  extractDigits, countDigits, 
+                  extractDigits, countDigits, isOrderDescending, 
                   findIntersections, findDifferences, createUnion, fetchUniques,
                   isSubset, rotateElementsBy, zip, partition, reduce, generateFibonacci,
                   generateNumbersSeries};
