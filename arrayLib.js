@@ -153,51 +153,59 @@ const findFirstOccurance = function(element, elements) {
   let firstOccurance = elements.indexOf(element);
   return firstOccurance;
 }
-
-//---------------------------(is greater)------------------------------//
-
-const isGreater = function(value1, value2) {
-  let isGreater = value1 >= value2;
-  return isGreater;
-}
-
-exports.isGreater = isGreater;
-
-//-------------------------(is lesser)-------------------------------//
-
-const isLesser = function(value1, value2) {
-  let isLesser = value1 <= value2;
-  return isLesser;
-}
-
-//---------------------(compare value with succeeding values)---------------------------------//
-
-const compareWithSucceeder = function(numbers, comparisonType) {
-  let length = numbers.length;
-  for(let position = 0; position < (length -1); position++) {
-    let comparedResult = comparisonType(numbers[position],numbers[position +1]); 
-    if(!comparedResult) {
-      return false;
-    }
-  }
-  return true;
-}
-
-//------------------(checkOrderAscending)--------------------------//
-
+//
+////---------------------------(is greater)------------------------------//
+//
+//const isGreater = function(value1, value2) {
+//  let isGreater = value1 >= value2;
+//  return isGreater;
+//}
+//
+//exports.isGreater = isGreater;
+//
+////-------------------------(is lesser)-------------------------------//
+//
+//const isLesser = function(value1, value2) {
+//  let isLesser = value1 <= value2;
+//  return isLesser;
+//}
+//
+////---------------------(compare value with succeeding values)---------------------------------//
+//
+//const compareWithSucceeder = function(numbers, comparisonType) {
+//  let length = numbers.length;
+//  for(let position = 0; position < (length -1); position++) {
+//    let comparedResult = comparisonType(numbers[position],numbers[position +1]); 
+//    if(!comparedResult) {
+//      return false;
+//    }
+//  }
+//  return true;
+//}
+//
+////------------------(checkOrderAscending)--------------------------//
+//
 const isOrderAscending = function(numbers) {
-  let isAscending = compareWithSucceeder(numbers, isLesser);
+  let booleans = [];
+  const compareNumbers = function(num1, num2) {
+    booleans.push(num1 < num2); 
+    return num2;
+  }
+  numbers.reduce(compareNumbers, 0); 
+  let isAscending = booleans.reduce(function(state1, state2){
+    return (state1 && state2);
+  });
 
   return isAscending;
 }
 
-//-------------------(isOrderDescending)---------------------//
+////-------------------(isOrderDescending)---------------------//
 
-const isOrderDescending = function(numbers) {
-  let isDescending = compareWithSucceeder(numbers, isGreater);
-
-  return isDescending;
-}
+//const isOrderDescending = function(numbers) {
+//  let isDescending = compareWithSucceeder(numbers, isGreater);
+//
+//  return isDescending;
+//}
 
 //----------------------(count digits)------------------------//
 
@@ -314,8 +322,6 @@ const zip = function(list1,list2) {
   return zippedElements;
 }
 
-exports.zip = zip;
-
 //----------------------(rotate elements by "value")----------------------//
 
 const rotateElementsBy = function(rotateByIndex, elements) {
@@ -333,18 +339,19 @@ exports.rotateElementsBy = rotateElementsBy
 //------------------------------(partition)------------------------------------//
 
 const partition = function(elements, partitioner) {
-  return elements.reduce(function(initializer,element) {
+  const createPartition = function(initializer,element) {
     let isLesser = partitioner >= element ? 0:1;
     initializer[isLesser].push(element);
     return initializer;
-  },[[],[]]);
+  }
+  return elements.reduce(createPartition, [[],[]]);
 }
 
 module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers,
                   addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
                   mapLengths, countOddNumbers, countEvenNumbers, countNumbersAbove,
                   countNumbersBelow, findFirstOccurance, isOrderAscending, 
-                  isOrderDescending, isGreater, isLesser, extractDigits, countDigits,
+                  extractDigits, countDigits, 
                   findIntersections, findDifferences, createUnion, fetchUniques,
                   isSubset, rotateElementsBy, zip, partition, reduce, generateFibonacci,
                   generateNumbersSeries};

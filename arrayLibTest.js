@@ -146,16 +146,16 @@ assert.equal(isOrderAscending([2,2,1,1]),false);
 //-----------------(is order descending)------------------------------------//
 
 const isOrderDescending = lib.isOrderDescending;
-assert.equal(isOrderDescending([1]),true);
-assert.equal(isOrderDescending([2,1]),true);
-assert.equal(isOrderDescending([1,2]),false);
-assert.equal(isOrderDescending([2,2,1,1]),true);
+//assert.equal(isOrderDescending([1]),true);
+//assert.equal(isOrderDescending([2,1]),true);
+//assert.equal(isOrderDescending([1,2]),false);
+//assert.equal(isOrderDescending([2,2,1,1]),true);
 
-//------------------------(is greater)---------------------------//
-
-const isGreater = lib.isGreater;
-assert.equal(isGreater(2,1),true);
-assert.equal(isGreater(1,2),false);
+////------------------------(is greater)---------------------------//
+//
+//const isGreater = lib.isGreater;
+//assert.equal(isGreater(2,1),true);
+//assert.equal(isGreater(1,2),false);
 
 //-----------------------(extract digits)--------------------//
 
@@ -235,7 +235,7 @@ assert.deepEqual(partition([1,2,3,4,5], 3),[[1,2,3],[4,5]]);
 assert.deepEqual(partition([1,1,1,1,1],1),[[1,1,1,1,1],[]]);
 assert.deepEqual(partition([],),[[],[]]);
 
-//----------------------------()--//
+//----------------------------(generate numbers series)-----------------//
 
 const generateNumbersSeries = lib.generateNumbersSeries;
 assert.deepEqual(generateNumbersSeries(5),[0,1,2,3,4]);
