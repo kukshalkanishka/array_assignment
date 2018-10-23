@@ -172,15 +172,16 @@ const isOrderAscending = function(numbers) {
 //-------------------(isOrderDescending)---------------------//
 
 const isOrderDescending = function(numbers) {
-  let isDescending = true;
-  let length = numbers.length-1;
-  for(let position = 0; position < length; position++) {
-    let comparedResult = numbers[position] > numbers[position +1]; 
-    if(!comparedResult) {
-      isDescending = false;
+  let accInfo = {previousValue : numbers[0], state : true};
+  let comparisonInfo =  numbers.reduce(function(accInfo ,currentValue){
+    if(accInfo.previousValue < currentValue){
+      accInfo.state = false;
     }
-  }
-  return isDescending;
+    let state = accInfo.state;
+    let previousValue = currentValue;
+    return {previousValue, state};
+  },accInfo);
+  return comparisonInfo.state;
 }
 
 
