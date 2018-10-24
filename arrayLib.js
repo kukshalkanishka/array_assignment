@@ -1,8 +1,8 @@
 //----------------------(reverse elements)------------------// 
 
 const reverseElements = function(elements, element){
-    elements.unshift(element);
-    return elements;
+  elements.unshift(element);
+  return elements;
 }
 
 const reverse= function(elements){
@@ -206,7 +206,6 @@ const isOrderDescending = function(numbers) {
   return comparisonInfo.state;
 }
 
-
 //----------------------(count digits)------------------------//
 
 const countDigits = function(number) {
@@ -349,11 +348,11 @@ const partition = function(elements, partitioner) {
 }
 
 module.exports = {reverse, selectAlternates, filterOddNumbers, filterEvenNumbers,
-                  addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
-                  mapLengths, countOddNumbers, countEvenNumbers, countNumbersAbove,
-                  countNumbersBelow, findFirstOccurance, isOrderAscending, 
-                  extractDigits, countDigits, isOrderDescending, 
-                  findIntersections, findDifferences, createUnion, fetchUniques,
-                  isSubset, rotateElementsBy, zip, partition, reduce, generateFibonacci,
-                  generateNumbersSeries};
+  addNumbers, findGreatestNum, findLowestNum, calculateAverage, 
+  mapLengths, countOddNumbers, countEvenNumbers, countNumbersAbove,
+  countNumbersBelow, findFirstOccurance, isOrderAscending, 
+  extractDigits, countDigits, isOrderDescending, 
+  findIntersections, findDifferences, createUnion, fetchUniques,
+  isSubset, rotateElementsBy, zip, partition, reduce, generateFibonacci,
+  generateNumbersSeries};
 
