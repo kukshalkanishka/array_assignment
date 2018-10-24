@@ -179,16 +179,16 @@ const findFirstOccurance = function(element, elements) {
 //------------------(checkOrderAscending)--------------------------//
 
 const isOrderAscending = function(numbers) {
-  let booleans = [];
-  const compareNumbers = function(num1, num2) {
-    booleans.push(num1 < num2); 
-    return num2;
-  }
-  numbers.reduce(compareNumbers, 0); 
-  let isAscending = booleans.every(function(state){
-    return true === state;
-  })
-  return isAscending;
+  let accInfo = {previousValue : numbers[0], state : true};
+  let comparisonInfo =  numbers.reduce(function(accInfo ,currentValue){
+    if(accInfo.previousValue > currentValue){
+      accInfo.state = false;
+    }
+    let state = accInfo.state;
+    let previousValue = currentValue;
+    return {previousValue, state};
+  },accInfo);
+  return comparisonInfo.state;
 }
 
 //-------------------(isOrderDescending)---------------------//
