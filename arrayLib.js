@@ -1,10 +1,12 @@
 //----------------------(reverse elements)------------------// 
 
-const reverse= function(elements){
-  return elements.reduce(function(elements, element){
+const reverseElements = function(elements, element){
     elements.unshift(element);
     return elements;
-  }, []);
+}
+
+const reverse= function(elements){
+  return elements.reduce(reverseElements, []);
 }
 
 //-----------------------(generate numbers series)--------------------------//
@@ -37,24 +39,32 @@ const selectAlternates = function(numbers) {
 
 //-------------------------(filter odd numbers)---------------------//
 
+const isOdd = function(number) {
+  return number % 2 != 0;
+}
+
 const filterOddNumbers = function(numbers) {
-  return numbers.filter(function(number) {
-    return number % 2 != 0;
-  });
+  return numbers.filter(isOdd);
 }
 
 //------------------------------(Filter even numbers)---------------------//
+
+const isEven = function(number) {
+  return number % 2 == 0;
+}
+
 const filterEvenNumbers = function(numbers) {
-  return numbers.filter(function(number) {
-    return number % 2 == 0;
-  });
+  return numbers.filter(isEven);
 }
 
 //-----------------------------(Add numbers)-----------------------//
+
+const add = function(num1, num2) {
+  return (num1 + num2);
+}
+
 const addNumbers = function(numbers) {
-  return numbers.reduce(function(num1, num2) {
-    return (num1 + num2);
-  });
+  return numbers.reduce(add);
 }
 
 //----------------------------(generates Fibonacci)------------------//
@@ -86,18 +96,22 @@ const reduce = function(elements, reduce){
 
 //-------------------------------(find greatest number)------------------
 
+const findGreatestOfTwo = function(num1, num2) {
+  return num1 > num2 ? num1:num2;
+}
+
 const findGreatestNum = function(numbers) {
-  return numbers.reduce(function(num1, num2) {
-    return num1 > num2 ? num1:num2;
-  });
+  return numbers.reduce(findGreatestOfTwo);
 }
 
 //--------------------------------(find lowest number)---------------------//
 
+const findLowestOfTwo = function(num1, num2) {
+  return num1 < num2 ? num1:num2;
+}
+
 const findLowestNum = function(numbers) {
-  return numbers.reduce(function(num1, num2) {
-    return num1 < num2 ? num1:num2;
-  });
+  return numbers.reduce(findLowestOfTwo);
 }
 
 //------------------------------(provide average of numbers)----------------//
@@ -109,10 +123,12 @@ const calculateAverage = function(numbers) {
 
 //------------------------------(Map length of element)---------------------//
 
+const mapLength = function(element) {
+  return element.length;
+}
+
 const mapLengths = function(elements) {
-  return elements.map(function(element) {
-    return element.length;
-  });
+  return elements.map(mapLength);
 }
 
 //-------------------(count odd numbers)--------------//
@@ -132,18 +148,24 @@ const countEvenNumbers = function(numbers) {
 //-------------------(count numbers above a value)--------------//
 
 const countNumbersAbove = function(numbers,value) {
-  let numbersAboveValue = numbers.filter(function(number) {
+
+  const isGreater = function(number) {
     return number > value;
-  });
+  }
+
+  let numbersAboveValue = numbers.filter(isGreater);
   return numbersAboveValue.length;
 }
 
 //----------------------(count numbers below)--------------------//
 
 const countNumbersBelow = function(numbers,value) {
-  let numbersBelowValue = numbers.filter(function(number) {
+
+  const isLesser = function(number) {
     return number < value;
-  });
+  }
+
+  let numbersBelowValue = numbers.filter(isLesser);
   return numbersBelowValue.length;
 }
 
